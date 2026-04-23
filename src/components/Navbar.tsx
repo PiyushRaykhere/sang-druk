@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.webp";
-import buddha from "@/assets/buddha-medicine.webp";
+import buddha from "@/assets/buddha-medicine.png";
 
 const WHATSAPP_URL = "https://api.whatsapp.com/send?phone=917018922152&text=Hello%20Sang-Druk%2C%20I%20would%20like%20to%20book%20an%20appointment.";
 
@@ -50,9 +50,9 @@ const Navbar = () => {
           scrolled ? "max-h-0 opacity-0" : "max-h-48 opacity-100"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 lg:px-10 py-3 lg:py-4 flex items-center gap-3">
+        <div className="max-w-7xl mx-auto px-4 lg:px-10 py-3 lg:py-4 flex items-start gap-3">
           {/* Left — Logo */}
-          <Link to="/" className="shrink-0" onClick={() => setMobileOpen(false)} aria-label="Sang-Druk Home">
+          <Link to="/" className="shrink-0 self-start" onClick={() => setMobileOpen(false)} aria-label="Sang-Druk Home">
             <img
               src={logo}
               alt="Sang-Druk Logo"
@@ -76,7 +76,7 @@ const Navbar = () => {
           </div>
 
           {/* Right — Buddha image (desktop) */}
-          <div className="hidden lg:flex shrink-0 items-center justify-center">
+          <div className="hidden lg:flex shrink-0 self-start items-start justify-center">
             <img
               src={buddha}
               alt="Medicine Buddha"
