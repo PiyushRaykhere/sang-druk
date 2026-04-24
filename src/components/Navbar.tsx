@@ -50,28 +50,31 @@ const Navbar = () => {
           scrolled ? "max-h-0 opacity-0" : "max-h-48 opacity-100"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 lg:px-10 py-3 lg:py-4 flex items-start gap-3">
+        <div className="max-w-7xl mx-auto px-4 lg:px-10 py-3 flex items-start gap-4">
           {/* Left — Logo */}
           <Link to="/" className="shrink-0 self-start" onClick={() => setMobileOpen(false)} aria-label="Sang-Druk Home">
             <img
               src={logo}
               alt="Sang-Druk Logo"
-              className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 object-contain"
-              width={160}
-              height={160}
+              className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-contain"
+              width={120}
+              height={120}
             />
           </Link>
 
           {/* Center — Title */}
-          <div className="flex-1 flex flex-col items-center text-center px-2 min-w-0">
+          <div className="flex-1 flex flex-col items-start text-left px-2 min-w-0 pt-1">
             <span
-              className="text-spa-gold font-serif text-sm sm:text-lg lg:text-2xl leading-tight truncate max-w-full"
+              className="text-spa-gold font-serif text-base sm:text-xl lg:text-2xl leading-tight truncate max-w-full"
               lang="bo"
             >
               ༄༅། །བཟང་དྲུག་བོད་ཀྱི་གསོ་རིག་སྨན་ཁང་།
             </span>
-            <span className="text-primary-foreground font-serif font-bold text-sm sm:text-lg lg:text-xl tracking-wide uppercase mt-1">
+            <span className="text-primary-foreground font-serif font-bold text-sm sm:text-lg lg:text-2xl tracking-wide uppercase mt-1">
               Sang-Druk Tibetan Herbal Clinic
+            </span>
+            <span className="hidden sm:block text-primary-foreground/80 italic font-sans text-xs lg:text-sm mt-1.5 leading-snug max-w-3xl">
+              At the heart of Sowa Rigpa, healing begins where compassion meets wisdom — restoring balance to body, mind, and the science of life.
             </span>
           </div>
 
@@ -80,9 +83,9 @@ const Navbar = () => {
             <img
               src={buddha}
               alt="Medicine Buddha"
-              className="w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 object-contain drop-shadow-lg"
-              width={160}
-              height={160}
+              className="w-24 h-24 object-contain drop-shadow-lg"
+              width={120}
+              height={120}
             />
           </div>
 
