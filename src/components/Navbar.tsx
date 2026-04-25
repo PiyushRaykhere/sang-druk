@@ -62,7 +62,7 @@ const Navbar = () => {
     <img
       src={logo}
       alt="Sang-Druk Logo"
-      className="w-16 h-26 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-contain"
+      className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-contain"
     />
   </Link>
 
