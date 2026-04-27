@@ -19,6 +19,16 @@ const serviceItems = [
   { name: "Services & Treatments", href: "/services-treatments" },
 ];
 
+const aboutItems = [
+  { name: "Who we are", href: "/" },
+  { name: "Why choose us", href: "/" },
+  { name: "History of Tibetan Medicine", href: "/" },
+  { name: "Development Tibetan medicine in Exile", href: "/" },
+  { name: "Four Tantras", href: "/" },
+  { name: "Medicine Buddha", href: "/" },
+];
+
+
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
@@ -26,6 +36,8 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const productsRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLDivElement>(null);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const aboutRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -114,12 +126,34 @@ const Navbar = () => {
             >
               Home
             </Link>
-            <Link
-              to="/about-sangdruk"
-              className="px-5 py-3.5 text-spa-green-deep font-bold text-sm tracking-wider uppercase font-sans hover:bg-spa-green-deep hover:text-spa-gold transition-colors"
-            >
-              About Us
-            </Link>
+            <div
+  ref={aboutRef}
+  className="relative"
+  onMouseEnter={() => setAboutOpen(true)}
+  onMouseLeave={() => setAboutOpen(false)}
+>
+  <button className="flex items-center gap-1 px-5 py-3.5 text-spa-green-deep font-bold text-sm tracking-wider uppercase font-sans hover:bg-spa-green-deep hover:text-spa-gold transition-colors">
+    About Us
+    <ChevronDown className={`w-3.5 h-3.5 transition-transform ${aboutOpen ? "rotate-180" : ""}`} />
+  </button>
+
+  {/* Dropdown */}
+  <div
+    className={`absolute top-full left-0 bg-background rounded-b-xl shadow-elegant border border-border py-2 min-w-[240px] z-50 transition-all duration-300 ${
+      aboutOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"
+    }`}
+  >
+    {aboutItems.map((item) => (
+      <Link
+        key={item.name}
+        to={item.href}
+        className="block px-4 py-2.5 text-sm text-foreground hover:bg-spa-gold/15 hover:text-spa-green-deep transition-colors font-sans font-semibold"
+      >
+        {item.name}
+      </Link>
+    ))}
+  </div>
+</div>
 
             <div ref={productsRef} className="relative">
               <button
