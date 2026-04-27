@@ -28,14 +28,20 @@ const WhatIsSangDrukSection = () => {
 
           <Reveal delay={120}>
             <p className="text-xs tracking-[0.25em] uppercase text-spa-green/70 mb-4 font-sans font-medium">— Discover —</p>
-            <h2 className="text-3xl md:text-4xl lg:text-[44px] leading-[1.15] mb-6 text-balance">
+            <h2 className="text-2xl md:text-4xl lg:text-[38px] leading-[1.15] mb-6 text-balance">
               What is <em className="italic text-spa-green">Sang-Druk</em>?
             </h2>
-            <p className="text-muted-foreground text-[15px] font-sans leading-[1.8] mb-4">
-              <strong className="text-foreground">"Sang"</strong> refers to purification and healing, while <strong className="text-foreground">"Druk"</strong> represents six essential healing elements, each corresponding to a vital internal organ to restore harmony of body, energy, and mind.
+            <p className="text-muted-foreground text-[15px] font-sans leading-[1.8] mb-2">
+              Sang Druk Tibetan Clinic reflects the true essence of Tibetan healing rooted in the ancient wisdom of Sowa Rigpa
             </p>
-            <p className="text-muted-foreground text-[15px] font-sans leading-[1.8] mb-8">
-              Sang-Druk Tibetan Herbal Clinic is dedicated to preserving, promoting, and practicing Sowa Rigpa while delivering holistic, natural, and preventive healthcare.
+            <p className="text-muted-foreground text-[15px] font-sans leading-[1.8] mb-2">
+              <strong className="text-foreground">"Sang"</strong> means purification, cleansing, and healing, while <strong className="text-foreground">"Druk"</strong> represents six essential healing elements connected to vital internal organs. Together, Sang-Druk symbolizes a natural, balanced, and complete system of healing for body, energy, mind, and life.
+            </p>
+            <p className="text-muted-foreground text-[15px] font-sans leading-[1.8] mb-2">
+              The six medicinal ingredients in our logo are Bamboo Silica, Saffron, Clove, Green Cardamom, Nutmeg, and Black Cardamom. Each supports specific organs such as the lungs, liver, heart, kidneys, spleen, and life-channel while balancing the three energies—Lung (Wind), Tripa (Bile), and Beken (Phlegm).
+            </p>
+            <p className="text-muted-foreground text-[15px] font-sans leading-[1.8] mb-6">
+              Chebula, known as the king of Tibetan medicine, represents perfect balance. It contains the essence of the five natural elements and supports all three energies, symbolizing complete healing and longevity.
             </p>
             <Link to="/about-sangdruk" className="group inline-flex items-center gap-2 bg-gradient-green text-primary-foreground font-sans text-sm px-7 py-3.5 rounded-full shadow-elevated hover:shadow-elegant transition-all duration-300 hover:-translate-y-0.5">
               Get More Information

@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
-import logo from "@/assets/logo.webp";
+import logo from "@/assets/logo-removebg-preview.png";
 import buddha from "@/assets/buddha-medicine.png";
 
 const WHATSAPP_URL =
@@ -51,13 +51,13 @@ const Navbar = () => {
           scrolled ? "max-h-0 opacity-0" : "max-h-48 opacity-100"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 lg:px-10 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 lg:px-40 flex items-center justify-between">
           {/* Left — Logo */}
           <Link to="/" className="shrink-0" onClick={() => setMobileOpen(false)} aria-label="Sang-Druk Home">
             <img
               src={logo}
               alt="Sang-Druk Logo"
-              className="w-[30px] h-[30px] sm:w-20 sm:h-20 lg:w-24 lg:h-24 object-contain"
+              className="w-20 h-24 sm:w-24 sm:h-28 lg:w-32 lg:h-32  "
             />
           </Link>
 
@@ -75,7 +75,10 @@ const Navbar = () => {
 
             {/* Tagline */}
             <span className="hidden sm:block text-white/80 italic font-sans text-xs lg:text-sm mt-1.5 leading-snug max-w-3xl">
-              At the heart of Sowa Rigpa, healing begins where compassion meets wisdom — restoring balance to body,
+              At the heart of Sowa Rigpa, healing begins where compassion meets wisdom — 
+            </span>
+            <span className="hidden sm:block text-white/80 italic font-sans text-xs lg:text-sm mt-1.5 leading-snug max-w-3xl">
+              restoring balance to body,
               mind, and the science of life.
             </span>
           </div>
@@ -85,7 +88,7 @@ const Navbar = () => {
             <img
               src={buddha}
               alt="Medicine Buddha"
-              className="w-20 h-20 lg:w-24 lg:h-24 object-contain drop-shadow-lg"
+              className="w-24 h-24 lg:w-24 lg:h-28 object-contain drop-shadow-lg"
             />
           </div>
         </div>
@@ -101,7 +104,7 @@ const Navbar = () => {
       </div>
 
       {/* Bottom bar — sticky gold menu */}
-      <nav className="hidden lg:block bg-spa-gold border-t-2 border-spa-green-deep/20">
+      <nav className="hidden lg:block h-[47px] bg-spa-gold ">
         <div className="max-w-7xl mx-auto px-10 flex items-center gap-1">
           {/* Centered links */}
           <div className="flex-1 flex items-center justify-center gap-1">
@@ -124,7 +127,7 @@ const Navbar = () => {
                   setProductsOpen(!productsOpen);
                   setServicesOpen(false);
                 }}
-                className="flex items-center gap-1.5 px-5 py-3.5 text-spa-green-deep font-bold text-sm tracking-wider uppercase font-sans hover:bg-spa-green-deep hover:text-spa-gold transition-colors"
+                className="flex items-center gap-1 px-3 py-3.5 text-spa-green-deep font-bold text-xs tracking-wider uppercase font-sans hover:bg-spa-green-deep hover:text-spa-gold transition-colors"
               >
                 Products{" "}
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform ${productsOpen ? "rotate-180" : ""}`} />

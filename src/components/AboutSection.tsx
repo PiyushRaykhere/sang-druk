@@ -6,24 +6,24 @@ import Reveal from "@/components/Reveal";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="relative py-20 lg:py-28 px-6 lg:px-16 max-w-7xl mx-auto">
+    <section id="about" className="relative py-20 lg:py-26 px-6 lg:px-16 max-w-7xl mx-auto">
       <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
         <Reveal>
-          <p className="text-xs tracking-[0.25em] uppercase text-spa-green/70 mb-4 font-sans font-medium">— About Us —</p>
-          <h2 className="text-3xl md:text-4xl lg:text-[44px] leading-[1.15] mb-6 text-balance">
-            Bridging Ancient Tibetan Wisdom with <em className="italic text-spa-green">Modern Holistic Care</em>
+          <p className="text-l tracking-[0.25em] uppercase text-spa-green/70 mb-4 font-sans font-medium">— About Us —</p>
+          <h2 className="text-3xl md:text-4xl lg:text-[37px] leading-[1.15] mb-6 text-balance">
+            Bridging <em className="italic text-spa-green"> Ancient Tibetan Wisdom</em> with Modern Holistic Care
           </h2>
           <p className="text-muted-foreground text-[15px] font-sans leading-[1.8] mb-4">
-            Sang-Druk brings the 2,500-year-old Tibetan wisdom of Sowa-Rigpa to the heart of India. We provide personalized diagnosis through traditional pulse reading and urine analysis, followed by treatment using authentic Tibetan herbal medicine.
+            <strong>Sang-Druk Tibetan Herbal Clinic</strong> brings the 2,500-year-old healing wisdom of Sowa Rigpa (Traditional Tibetan Medicine) to the heart of India. We offer personalized diagnosis through traditional pulse reading, urine analysis, and holistic consultation, followed by treatment using authentic Tibetan herbal medicine and natural healing methods.
           </p>
           <p className="text-muted-foreground text-[15px] font-sans leading-[1.8] mb-8">
-            Led by experienced practitioners trained in the Men-Tsee-Khang tradition, we combine ancient knowledge with compassionate, personalized care.
+            With the experience of a former doctor of Men-Tsee-Khang (The Tibetan Medical and Astro Institute), our clinic follows the authentic lineage of Tibetan medicine, combining ancient knowledge with compassionate, patient-centered care. We focus on identifying and treating the root cause of illness rather than only managing symptoms, helping patients achieve long-term health, balance, and well-being.
           </p>
           <a
-            href="#contact"
+            href="/about-sangdruk"
             className="group inline-flex items-center gap-2 bg-gradient-green text-primary-foreground font-sans text-sm px-7 py-3.5 rounded-full shadow-elevated hover:shadow-elegant transition-all duration-300 hover:-translate-y-0.5"
           >
-            Book Appointment
+            Explore more
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </a>
         </Reveal>

@@ -36,7 +36,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="relative py-16 lg:py-20 max-w-7xl mx-auto px-6 lg:px-16">
+    <section id="services" className="relative py-16 lg:py-16 max-w-7xl mx-auto px-6 lg:px-16">
       <Reveal className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
         <div>
           <p className="text-xs tracking-[0.25em] uppercase text-spa-green/70 mb-3 font-sans font-medium">— Our Treatments —</p>
