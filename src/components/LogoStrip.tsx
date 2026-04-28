@@ -11,8 +11,8 @@ const items = [
 const LogoStrip = () => {
   return (
     <section className="relative py-8 bg-gradient-card border-y border-border/60">
-      <div className="max-w-7xl mx-auto px-6 lg:px-16">
-        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 lg:gap-x-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 sm:gap-x-10 lg:gap-x-14">
           {items.map((item, i) => (
             <div key={i} className="group flex items-center gap-2.5 text-muted-foreground hover:text-foreground transition-colors">
               <span className="w-9 h-9 rounded-full bg-gradient-gold-soft flex items-center justify-center group-hover:scale-110 transition-transform">

@@ -20,12 +20,12 @@ const serviceItems = [
 ];
 
 const aboutItems = [
-  { name: "Who we are", href: "/" },
-  { name: "Why choose us", href: "/" },
-  { name: "History of Tibetan Medicine", href: "/" },
-  { name: "Development Tibetan medicine in Exile", href: "/" },
-  { name: "Four Tantras", href: "/" },
-  { name: "Medicine Buddha", href: "/" },
+  { name: "Who we are", href: "/about/who-we-are" },
+  { name: "Why choose us", href: "/about/why-choose-us" },
+  { name: "History of Tibetan Medicine", href: "/about/history-tibetan-medicine" },
+  { name: "Development Tibetan medicine in Exile", href: "/about/development-in-exile" },
+  { name: "Four Tantras", href: "/about/four-tantras" },
+  { name: "Medicine Buddha", href: "/about/medicine-buddha" },
 ];
 
 
@@ -60,64 +60,64 @@ const Navbar = () => {
       {/* Top bar — hides on scroll */}
       <div
         className={`bg-spa-green-deep overflow-hidden transition-all duration-500 ${
-          scrolled ? "max-h-0 opacity-0" : "max-h-48 opacity-100"
+          scrolled ? "max-h-0 opacity-0" : "max-h-56 opacity-100"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 lg:px-40 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-10 flex items-center justify-between">
           {/* Left — Logo */}
           <Link to="/" className="shrink-0" onClick={() => setMobileOpen(false)} aria-label="Sang-Druk Home">
             <img
               src={logo}
               alt="Sang-Druk Logo"
-              className="w-20 h-24 sm:w-24 sm:h-28 lg:w-32 lg:h-32  "
+              className="w-16 h-20 sm:w-20 sm:h-24 lg:w-28 lg:h-28"
             />
           </Link>
 
-          {/* Center — Title (PROPER CENTERED) */}
+          {/* Center — Title */}
           <div className="flex-1 flex flex-col items-center text-center px-2 min-w-0">
             {/* Tibetan Text */}
-            <span className="text-yellow-300 font-serif text-sm sm:text-xl lg:text-2xl leading-tight" lang="bo">
+            <span className="text-yellow-300 font-serif text-xs sm:text-base md:text-xl lg:text-2xl leading-tight" lang="bo">
               ༄༅། །བཟང་དྲུག་བོད་ལུགས་གསོ་རིག་སྨན་ཁང་།
             </span>
 
             {/* Main Title */}
-            <span className="text-white font-serif font-bold text-sm sm:text-lg lg:text-2xl tracking-wide uppercase mt-1">
+            <span className="text-white font-serif font-bold text-xs sm:text-sm md:text-lg lg:text-2xl tracking-wide uppercase mt-1">
               SANG-DRUK TIBETAN HERBAL CLINIC
             </span>
 
             {/* Tagline */}
-            <span className="hidden sm:block text-white/80 italic font-sans text-xs lg:text-sm mt-1.5 leading-snug max-w-3xl">
-              At the heart of Sowa Rigpa, healing begins where compassion meets wisdom — 
+            <span className="hidden md:block text-white/80 italic font-sans text-xs lg:text-sm mt-1 leading-snug max-w-3xl">
+              At the heart of Sowa Rigpa, healing begins where compassion meets wisdom —
             </span>
-            <span className="hidden sm:block text-white/80 italic font-sans text-xs lg:text-sm mt-1.5 leading-snug max-w-3xl">
-              restoring balance to body,
-              mind, and the science of life.
+            <span className="hidden md:block text-white/80 italic font-sans text-xs lg:text-sm leading-snug max-w-3xl">
+              restoring balance to body, mind, and the science of life.
             </span>
           </div>
 
-          {/* Right — Buddha image */}
-          <div className="hidden lg:flex shrink-0 items-center justify-center">
-            <img
-              src={buddha}
-              alt="Medicine Buddha"
-              className="w-24 h-24 lg:w-24 lg:h-28 object-contain drop-shadow-lg"
-            />
+          {/* Right — Buddha image + Mobile toggle */}
+          <div className="flex items-center gap-2 shrink-0">
+            <div className="hidden lg:flex items-center justify-center">
+              <img
+                src={buddha}
+                alt="Medicine Buddha"
+                className="w-20 h-24 lg:w-24 lg:h-28 object-contain drop-shadow-lg"
+              />
+            </div>
+            {/* Mobile toggle */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="lg:hidden text-primary-foreground p-2 min-w-[44px] min-h-[44px] flex items-center justify-center"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            >
+              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
         </div>
-
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden text-primary-foreground ml-auto p-2 -mr-2"
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-        >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
       </div>
 
       {/* Bottom bar — sticky gold menu */}
-      <nav className="hidden lg:block h-[47px] bg-spa-gold ">
-        <div className="max-w-7xl mx-auto px-10 flex items-center gap-1">
+      <nav className="hidden lg:block h-[47px] bg-spa-gold">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 xl:px-16 flex items-center gap-1">
           {/* Centered links */}
           <div className="flex-1 flex items-center justify-center gap-1">
             <Link
@@ -231,28 +231,34 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="bg-spa-green-deep p-6 flex flex-col gap-1 lg:hidden border-t border-spa-gold/30 max-h-[calc(100vh-6rem)] overflow-y-auto">
+        <div className="bg-spa-green-deep px-4 py-4 flex flex-col gap-1 lg:hidden border-t border-spa-gold/30 max-h-[calc(100dvh-7rem)] overflow-y-auto">
           <Link
             to="/"
-            className="text-primary-foreground text-base font-bold font-sans py-3 border-b border-primary-foreground/10"
+            className="text-primary-foreground text-base font-bold font-sans py-3 border-b border-primary-foreground/10 min-h-[44px] flex items-center"
             onClick={() => setMobileOpen(false)}
           >
             Home
           </Link>
-          <Link
-            to="/about-sangdruk"
-            className="text-primary-foreground text-base font-bold font-sans py-3 border-b border-primary-foreground/10"
-            onClick={() => setMobileOpen(false)}
-          >
-            About Us
-          </Link>
+          <div className="py-3 border-b border-primary-foreground/10">
+            <p className="text-spa-gold text-xs font-bold tracking-[0.2em] uppercase mb-3 font-sans">About Us</p>
+            {aboutItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className="block text-primary-foreground text-sm font-medium font-sans pl-3 py-2.5 min-h-[44px] flex items-center"
+                onClick={() => setMobileOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
           <div className="py-3 border-b border-primary-foreground/10">
             <p className="text-spa-gold text-xs font-bold tracking-[0.2em] uppercase mb-3 font-sans">Products</p>
             {productCategories.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className="block text-primary-foreground text-[15px] font-medium font-sans pl-3 py-2"
+                className="block text-primary-foreground text-sm font-medium font-sans pl-3 py-2.5 min-h-[44px] flex items-center"
                 onClick={() => setMobileOpen(false)}
               >
                 {item.name}
@@ -265,7 +271,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className="block text-primary-foreground text-[15px] font-medium font-sans pl-3 py-2"
+                className="block text-primary-foreground text-sm font-medium font-sans pl-3 py-2.5 min-h-[44px] flex items-center"
                 onClick={() => setMobileOpen(false)}
               >
                 {item.name}
@@ -274,7 +280,7 @@ const Navbar = () => {
           </div>
           <a
             href="#contact"
-            className="text-primary-foreground text-base font-bold font-sans py-3 border-b border-primary-foreground/10"
+            className="text-primary-foreground text-base font-bold font-sans py-3 border-b border-primary-foreground/10 min-h-[44px] flex items-center"
             onClick={() => setMobileOpen(false)}
           >
             Contact

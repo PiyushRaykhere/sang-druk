@@ -8,8 +8,8 @@ const Footer = () => {
       <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-spa-green-light/20 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full bg-spa-gold/10 blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-16 py-16 lg:py-20">
-        <div className="grid md:grid-cols-4 gap-10 lg:gap-12">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-16 py-12 lg:py-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           <div>
             <Link to="/" className="flex items-center gap-2 mb-5">
               <img src={logo} alt="Sang-Druk Logo" className="w-11 h-11 rounded-full object-contain" />

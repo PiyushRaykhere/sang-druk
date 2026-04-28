@@ -13,7 +13,7 @@ const posts = [
 const BlogSection = () => {
   return (
     <section className="relative py-20 lg:py-28 bg-gradient-section overflow-hidden">
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-16">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
         <Reveal className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div>
             <p className="text-xs tracking-[0.25em] uppercase text-spa-green/70 mb-4 font-sans font-medium">— Blog —</p>
@@ -27,12 +27,12 @@ const BlogSection = () => {
           </a>
         </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-7">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-7">
           {posts.map((p, i) => (
             <Reveal key={i} delay={i * 100}>
               <article className="group cursor-pointer bg-background rounded-2xl overflow-hidden shadow-soft card-lift border border-border/50 h-full flex flex-col">
                 <div className="overflow-hidden relative">
-                  <img src={p.img} alt={p.title} className="w-full h-52 object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" width={640} height={512} />
+                  <img src={p.img} alt={p.title} className="w-full h-44 sm:h-52 object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" width={640} height={512} />
                   <span className="absolute top-4 left-4 glass px-3 py-1 rounded-full text-[10px] font-sans tracking-widest uppercase text-foreground font-semibold">
                     {p.cat}
                   </span>

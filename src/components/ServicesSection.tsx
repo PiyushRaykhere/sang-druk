@@ -36,8 +36,8 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="relative py-16 lg:py-16 max-w-7xl mx-auto px-6 lg:px-16">
-      <Reveal className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+    <section id="services" className="relative py-12 lg:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
+      <Reveal className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-4">
         <div>
           <p className="text-xs tracking-[0.25em] uppercase text-spa-green/70 mb-3 font-sans font-medium">— Our Treatments —</p>
           <h2 className="text-3xl md:text-4xl leading-[1.15] max-w-2xl text-balance">
@@ -50,12 +50,12 @@ const ServicesSection = () => {
         </a>
       </Reveal>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6">
         {services.map((s, i) => (
           <Reveal key={i} delay={i * 100}>
             <div className="group flex flex-col h-full rounded-2xl overflow-hidden bg-gradient-card shadow-elevated card-lift border border-border/50">
               <div className="relative">
-                <img src={s.img} alt={s.title} className="w-full h-44 object-cover" loading="lazy" width={640} height={360} />
+                <img src={s.img} alt={s.title} className="w-full h-40 sm:h-44 object-cover" loading="lazy" width={640} height={360} />
                 <div className="absolute inset-0 bg-gradient-to-t from-spa-green-deep/50 to-transparent" />
                 <div className="absolute top-3 left-3 glass-dark rounded-full px-2.5 py-1 text-[10px] font-sans tracking-widest uppercase text-primary-foreground">
                   0{i + 1}

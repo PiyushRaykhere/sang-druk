@@ -26,9 +26,9 @@ const HeroSection = () => {
   }, [next]);
 
   return (
-    <section className="relative w-full aspect-[15/9] bg-[#999967] pt-[140px] sm:pt-[150px] lg:pt-[210px]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="relative w-full aspect-[21/9] overflow-hidden  shadow-elegant bg-spa-green-deep/10">
+    <section className="relative w-full bg-[#999967] pt-[120px] sm:pt-[140px] md:pt-[160px] lg:pt-[210px] pb-4 sm:pb-6">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-10">
+        <div className="relative w-full aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9] overflow-hidden shadow-elegant bg-spa-green-deep/10">
           {slides.map((slide, i) => (
             <div
               key={i}

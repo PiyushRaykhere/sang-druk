@@ -74,7 +74,7 @@ const ProductDetail = () => {
       <div className="min-h-screen">
         <div className="bg-spa-green">
           <Navbar />
-          <div className="pt-28 pb-16 px-6 lg:px-16 max-w-7xl mx-auto">
+          <div className="pt-28 sm:pt-36 md:pt-44 lg:pt-52 pb-10 sm:pb-16 px-4 sm:px-6 lg:px-16 max-w-7xl mx-auto">
             <h1 className="text-4xl text-primary-foreground">Product Not Found</h1>
           </div>
         </div>
@@ -91,7 +91,7 @@ const ProductDetail = () => {
     <div className="min-h-screen">
       <div className="bg-spa-green">
         <Navbar />
-        <div className="pt-28 pb-16 px-6 lg:px-16 max-w-7xl mx-auto">
+        <div className="pt-28 sm:pt-36 md:pt-44 lg:pt-52 pb-10 sm:pb-16 px-4 sm:px-6 lg:px-16 max-w-7xl mx-auto">
           <Link to="/" className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground text-sm font-sans mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Back to Home
           </Link>
@@ -99,16 +99,16 @@ const ProductDetail = () => {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 lg:px-16 py-16">
-        <div className="flex flex-col md:flex-row gap-8 mb-12">
-          <img src={product.img} alt={product.title} className="w-full md:w-1/2 h-72 object-cover rounded-lg" />
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-16 py-10 sm:py-16">
+        <div className="flex flex-col md:flex-row gap-6 sm:gap-8 mb-10 sm:mb-12">
+          <img src={product.img} alt={product.title} className="w-full md:w-1/2 h-56 sm:h-72 object-cover rounded-lg" />
           <div className="flex-1 flex flex-col justify-center">
             <p className="text-muted-foreground text-sm font-sans leading-relaxed">{product.intro}</p>
           </div>
         </div>
 
-        <h3 className="text-2xl font-serif mb-8">Available Products</h3>
-        <div className="grid md:grid-cols-2 gap-6">
+        <h3 className="text-2xl font-serif mb-6 sm:mb-8">Available Products</h3>
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
           {product.items.map((item, i) => (
             <div key={i} className="bg-section-bg rounded-lg p-6 hover:shadow-md transition-shadow">
               <h4 className="text-lg font-serif mb-2">{item.name}</h4>
@@ -117,7 +117,7 @@ const ProductDetail = () => {
           ))}
         </div>
 
-        <div className="mt-12 bg-spa-green/10 rounded-lg p-8 text-center">
+        <div className="mt-10 sm:mt-12 bg-spa-green/10 rounded-lg p-5 sm:p-8 text-center">
           <h4 className="font-serif text-xl mb-3">Interested in Our Products?</h4>
           <p className="text-muted-foreground text-sm font-sans mb-4">Contact us for availability, pricing, and personalized product recommendations based on your constitution.</p>
           <a href="https://api.whatsapp.com/send?phone=917018922152" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-spa-green text-primary-foreground px-6 py-3 rounded-full text-sm font-sans hover:bg-spa-green-light transition-colors">

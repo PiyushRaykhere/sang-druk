@@ -19,9 +19,9 @@ const TestimonialSection = () => {
 
   return (
     <section className="relative py-20 lg:py-28 bg-gradient-section overflow-hidden">
-      <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-gradient-gold-soft blur-3xl opacity-50 pointer-events-none" />
+      <div className="absolute -bottom-20 -left-20 w-[250px] h-[250px] sm:w-[500px] sm:h-[500px] rounded-full bg-gradient-gold-soft blur-3xl opacity-50 pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-16">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
         <Reveal className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <p className="text-xs tracking-[0.25em] uppercase text-spa-green/70 mb-4 font-sans font-medium">— Testimonials —</p>
@@ -41,12 +41,12 @@ const TestimonialSection = () => {
 
         <Reveal variant="scale">
           <div className="grid md:grid-cols-2 gap-0 rounded-3xl overflow-hidden shadow-elegant bg-gradient-card border border-border/50">
-            <div className="relative h-64 md:h-auto md:min-h-[420px]">
+            <div className="relative h-52 sm:h-64 md:h-auto md:min-h-[380px]">
               <img src={testimonialImg} alt="Happy patient" className="w-full h-full object-cover" loading="lazy" width={640} height={640} />
               <div className="absolute inset-0 bg-gradient-to-t from-spa-green-deep/40 to-transparent" />
             </div>
             <div className="flex flex-col">
-              <div className="bg-gradient-green text-primary-foreground p-8 lg:p-12 flex-1 flex flex-col justify-center relative">
+              <div className="bg-gradient-green text-primary-foreground p-6 sm:p-8 lg:p-12 flex-1 flex flex-col justify-center relative">
                 <Quote className="absolute top-8 right-8 w-16 h-16 text-primary-foreground/10" />
                 <div className="flex gap-1 mb-5">
                   {Array.from({ length: 5 }).map((_, i) => (
