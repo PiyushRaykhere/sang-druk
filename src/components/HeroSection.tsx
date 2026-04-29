@@ -34,6 +34,7 @@ const HeroSection = () => {
         lg      (1024px): top-bar ≈ 112px + gold-nav 47px = 159px → pt-[159px]
     */
     <section className="w-full bg-spa-green-deep pt-[72px] sm:pt-[88px] md:pt-[104px] lg:pt-[159px]">
+      <div className="bg-spa-green-deep/10 px-3 py-3 sm:px-5 sm:py-4 md:px-8 md:py-5">
       <div className="relative w-full aspect-video max-h-[85vh] min-h-[200px] overflow-hidden">
         {slides.map((slide, i) => (
           <div
@@ -93,6 +94,7 @@ const HeroSection = () => {
             {slides[current].alt}
           </p>
         </div>
+      </div>
       </div>
     </section>
   );
