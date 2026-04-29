@@ -3,380 +3,627 @@ import { ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-import sliderMenlha from "@/assets/slider-menlha.webp";
-import sliderDalaiLama from "@/assets/slider-dalailama.webp";
-import buddhaMedicine from "@/assets/buddha-medicine.webp";
+
+import image1 from '@/assets/historiimage/image1.png'
+import image2 from '@/assets/historiimage/image2.png'
+import image3 from '@/assets/historiimage/image3.png'
+import image4 from '@/assets/historiimage/image4.png'
+import image5 from '@/assets/historiimage/image5.png'
+import image6 from '@/assets/historiimage/image6.png'
+import image7 from '@/assets/historiimage/image7.png'
+
+
+
+// Placeholder images — replace with actual imports or URLs
+const imgBuddha = "https://placehold.co/220x260/d4c5a9/5c4a2a?text=Buddha+Shakyamuni";
+const imgLhaThothori = "https://placehold.co/220x260/d4c5a9/5c4a2a?text=Lha+Thothori";
+const imgElderYuthog = "https://placehold.co/220x260/d4c5a9/5c4a2a?text=Elder+Yuthog";
+const imgJuniorYuthog = "https://placehold.co/220x260/d4c5a9/5c4a2a?text=Junior+Yuthog";
+const imgRegentSangye = "https://placehold.co/220x260/d4c5a9/5c4a2a?text=Regent+Sangye";
+const imgKhyenrab = "https://placehold.co/220x260/d4c5a9/5c4a2a?text=Rev.+Khyenrab";
+const img13thDalai = "https://placehold.co/220x260/d4c5a9/5c4a2a?text=13th+Dalai+Lama";
+const img14thDalai = "https://placehold.co/220x260/d4c5a9/5c4a2a?text=14th+Dalai+Lama";
+
+/* ─── Small reusable pieces ─── */
+
+const SectionHeading = ({ children }) => (
+  <h2 className="text-lg font-bold text-gray-900 border-b border-gray-300 pb-1 mb-3 mt-8">
+    {children}
+  </h2>
+);
+
+const SubHeading = ({ children }) => (
+  <h3 className="text-[13px] font-bold text-gray-800 mt-5 mb-2">
+    {children}
+  </h3>
+);
+
+// Updated FloatImg component:
+const FloatImg = ({ src, alt, caption, side = "left", width = "w-[260px]", height = "h-[270px]" }) => (
+  <figure
+    className={`${
+      side === "left" ? "float-left mr-5" : "float-right ml-5"
+    } mb-3 ${width} text-center`}
+  >
+    <img
+      src={src}
+      alt={alt}
+      className={`w-full ${height} object-cover rounded shadow-sm border border-gray-200`}
+    />
+    {caption && (
+      <figcaption className="text-[10px] text-gray-500 mt-1 italic leading-tight">
+        {caption}
+      </figcaption>
+    )}
+  </figure>
+);
+//     <img
+//       src={src}
+//       alt={alt}
+//       className="w-full rounded shadow-sm border border-gray-200"
+//     />
+//     {caption && (
+//       <figcaption className="text-[10px] text-gray-500 mt-1 italic leading-tight">
+//         {caption}
+//       </figcaption>
+//     )}
+//   </figure>
+// );
+
+/* ─── Main Component ─── */
 
 const HistoryTibetanMedicine = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
+      {/* HERO */}
       <div className="bg-spa-green">
         <Navbar />
-        <div className="pt-28 sm:pt-36 md:pt-44 lg:pt-52 pb-10 sm:pb-16 px-4 sm:px-6 lg:px-16 max-w-7xl mx-auto">
+        <div className="pt-48 pb-16 px-6 max-w-6xl mx-auto">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground text-sm font-sans mb-6 transition-colors"
+            className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground text-sm mb-6"
           >
             <ArrowLeft className="w-4 h-4" /> Back to Home
           </Link>
-          <h1 className="text-3xl md:text-5xl text-primary-foreground mb-4 font-serif">
+          <h1 className="text-4xl md:text-5xl font-serif text-primary-foreground mb-3">
             History of Tibetan Medicine
           </h1>
-          <p className="text-primary-foreground/70 font-sans text-sm max-w-2xl">
-            A journey through one of the world's oldest and most comprehensive healing traditions
+          <p className="text-primary-foreground/80 max-w-2xl text-sm">
+            A journey through one of the world's oldest healing traditions
           </p>
         </div>
       </div>
 
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 prose-custom">
-        {/* Introduction */}
-        <section className="mb-12">
-          <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start mb-6">
-            <img
-              src={sliderMenlha}
-              alt="Menla – Medicine Buddha"
-              className="w-full md:w-64 lg:w-80 h-48 md:h-auto object-cover rounded-lg shadow-md flex-shrink-0"
-              loading="eager"
-            />
-            <div>
-              <h2 className="text-2xl md:text-3xl font-serif text-spa-green-deep mb-4">Introduction</h2>
-              <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-                Tibetan Medicine, known as <em>Sowa Rigpa</em> (the "Science of Healing"), is one of the world's oldest and most
-                sophisticated systems of traditional medicine. Practiced for over 2,500 years, it represents a profound body of
-                knowledge that integrates physical, mental, and spiritual well-being into a single holistic framework.
-              </p>
-              <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed">
-                The history of Tibetan Medicine is inseparable from the history of Tibetan civilization itself. It evolved through
-                the synthesis of indigenous Himalayan healing wisdom, Indian Ayurveda, Chinese medicine, and Persian medical
-                knowledge. This integration gave rise to a unique and comprehensive medical system, meticulously recorded in the
-                renowned <em>Gyushi</em> (Four Tantras) — the foundational textbook of Tibetan Medicine that remains central to
-                its practice to this day.
-              </p>
-            </div>
-          </div>
-        </section>
+      {/* ARTICLE */}
+      <article className="max-w-6xl mx-auto  py-10 text-[17.5px] leading-relaxed text-gray-800 font-sans">
 
-        {/* Buddha Shakyamuni */}
-        <section className="mb-12">
-          <div className="flex flex-col md:flex-row-reverse gap-6 md:gap-8 items-start mb-6">
-            <img
-              src={buddhaMedicine}
-              alt="Medicine Buddha"
-              className="w-full md:w-56 lg:w-72 h-48 md:h-auto object-contain rounded-lg shadow-md flex-shrink-0 bg-spa-green-deep/5"
-              loading="lazy"
-            />
-            <div>
-              <h2 className="text-2xl md:text-3xl font-serif text-spa-green-deep mb-4">Buddha Shakyamuni and the Origins</h2>
-              <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-                According to Tibetan medical tradition, the origins of medicine are traced back to the teachings of <strong>Sangye Menla</strong>,
-                the Medicine Buddha, who is believed to have taught the Four Tantras in a pure realm. These teachings were
-                transmitted through successive lineages of enlightened masters and ultimately reached the human realm.
-              </p>
-              <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-                <strong>Buddha Shakyamuni</strong> himself is revered as a great healer. His teachings on the nature of suffering and the path
-                to liberation encompass profound insights into physical and mental health. The Buddha classified diseases as rooted
-                in the "three poisons" — ignorance, attachment, and aversion — which correspond to the three humors (<em>nyipa sum</em>)
-                of Tibetan Medicine: <em>Lung</em> (Wind), <em>Tripa</em> (Bile), and <em>Beken</em> (Phlegm).
-              </p>
-              <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed">
-                The early development of Tibetan medicine was thus deeply intertwined with Buddhist philosophy and the compassionate
-                aspiration to relieve the suffering of all sentient beings. Physicians were considered spiritual practitioners, and
-                the healing art was regarded as a sacred vocation.
-              </p>
-            </div>
-          </div>
-        </section>
+        {/* ── INTRO ── */}
+        <p className="mb-3">
+          The Tibetan medical system is one of the world's oldest known medical
+          traditions. It is an integral part of Tibetan culture and has been
+          developed through many centuries. We believe that the origin of the
+          Tibetan medical tradition is as old as civilization itself.
+        </p>
+        <p className="mb-3">
+          Because humankind has depended on nature for sustenance and survival,
+          the instinctive urge to health and accumulated knowledge has guided us
+          to discover certain remedies for common ailments from natural sources.
+          For example, applying residual barley from <em>chang</em> (Tibetan
+          wine) on swollen body parts, drinking hot water for indigestion, and
+          using melted butter for bleeding are some of the therapies that arose
+          from practical experiences and gradually formed the basis for the art
+          of healing in Tibet. The Tibetan medical heritage is based on the book
+          of the Four Tantras (<em>rGyud-bZhi</em>), which remains the
+          fundamental medical text even today.
+        </p>
+        <p className="mb-4">
+          The era from the beginning of human civilisation to the advent of
+          Buddhism in Tibet can be termed as the pre-Buddhist era. During that
+          time, Bon tradition flourished in Tibet and Bon medical practice
+          influenced and enriched the existing Tibetan Medical knowledge and
+          practice. It has been clearly mentioned in a Bon text titled
+          "Jam-ma tsa-drel" that around 200 B.C., during the emergence of the
+          first Tibetan King Nyatri Tsenpo, there lived twelve scholars of Bon
+          tradition including a medical scholar who treated diseases through
+          medication and therapy. This indicates that Tibetans practiced
+          medicine and there were Tibetan physicians even prior to the advent of
+          Buddhism in Tibet.
+        </p>
 
-        {/* Early Tibetan Physicians */}
-        <section className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-serif text-spa-green-deep mb-6 border-b border-spa-gold/30 pb-3">
-            Early Tibetan Physicians and Royal Patronage
+        {/* ── BUDDHA SHAKYAMUNI ── */}
+        <SectionHeading>
+          Buddha Shakyamuni (961–881 B.C.) — according to Phuglug Tradition of
+          Tibetan Astrology
+        </SectionHeading>
+
+        <FloatImg
+          src= {image1}
+          alt="Buddha Shakyamuni"
+          caption="Buddha Shakyamuni"
+          side="left"
+        />
+
+        <p className="mb-3">
+          Shakyamuni Buddha was born in circa 961 B.C., and he lived till 881
+          BC. During his life time he taught Buddha Dharma (popularly known as
+          Buddhism). Buddhism came to Tibet during the reign of King Thothori
+          Nyantsen (245–364 A.D.) (according to <em>gSo-rig Kuns 'Dus</em>).
+          The Buddhist teachings gradually spread and were assimilated into
+          every part of Tibetan culture, becoming Tibet's state religion.
+        </p>
+        <p className="mb-3">
+          The philosophy of Tibetan Medicine also got motivated by it and the
+          influences are clearly visible in <em>rGyud-Zhi</em> (the principal
+          Tibetan medical text). The incorporation of Buddhist views of the four
+          immeasurable thoughts and six perfections in the prerequisite
+          conditions of Tibetan physicians are testimony of these influences.
+        </p>
+
+        <div className="clear-both" />
+
+        {/* ── LHA THOTHORI NYANTSAN ── */}
+        <SectionHeading>
+          Lha Thothori Nyantsan (245–364 A.D.) — according to{" "}
+          <em>gSo-rig Kuns 'Dus</em>
+        </SectionHeading>
+
+        {/* <FloatImg
+          src={imgLhaThothori}
+          alt="Lha Thothori Nyantsan"
+          caption="Lha Thothori Nyantsan"
+          side="right"
+        /> */}
+
+        <p className="mb-3">
+          The Indian physicians Biji Gaje and Bila Gazey (according to Yuthok
+          Sernying kyi Namthar) were born to rNga-Chenpo, the King of Yul Pema
+          Nyingpo, and his two wives. The mothers offered ten drums and ten
+          bells to the Mahabodhi Stupa of Vajrasana and made prayers for their
+          children's success in benefitting sentient beings. When the boy and
+          girl grew older, they requested their parents to let them learn the
+          Science of Healing.
+        </p>
+        <p className="mb-3">
+          After getting permission, they went to Taxilla in present day Pakistan
+          and studied medicine under the great Physician Atreya. Afterwards,
+          they travelled throughout India and also visited China, Nepal and East
+          Turkistan. They also received medical teachings from another great
+          physician, Kumara Jivaka, at Magadha.
+        </p>
+        <p className="mb-3">
+          When they were in Vajrasana, Arya Tara prophesied that they would go
+          to Tibet and propagate the Medical Science. During the reign of the
+          28th King, Lha Thotho-Ri-Nyantsen, Biji Gaje and Bilha Gaje did
+          visit Tibet. The King invited them to his Palace, Yumbu Lakhar, and
+          gave his daughter Yidkyi Rolcha as a bride to Biji Gaje. It is
+          believed that Biji Gaje and Bilha Gaje are still alive and exist in a
+          forest of sandalwood after attaining immortality.
+        </p>
+
+        <div className="clear-both" />
+
+        {/* ── DUNG GI THORCHOG ── */}
+        <SubHeading>Dung gi Thorchog (Dates Unknown)</SubHeading>
+        <p className="mb-3">
+          From Biji Gaje and Yidkyi Rolcha the first known physician in Yuthog
+          lineage, Dung gi Thorchog, was born in the 4th century. He learned
+          the art of pulse reading, pharmacology, moxibustion, bloodletting,
+          dressing and treatment of wounds from his father at an early age.
+        </p>
+        <p className="mb-3">
+          He became eminent in his field and was appointed as the personal
+          physician to his grandfather, King Lha Thothori Nyantsen, and Trinyan
+          Zungtsan. He was one of the most innovative physicians in Tibet and
+          under his lineage the famous Yuthog Yonten Gonpo is said to have been
+          born. His successive sons continued the lineage and served as personal
+          physicians to the kings of their times for four consecutive
+          generations.
+        </p>
+
+        {/* ── SONGTSEN GAMPO ── */}
+        <SubHeading>
+          Dharma King Songtsen Gampo (617–650 A.D.) — according to{" "}
+          <em>Dungkar tsigzod chenmo</em>
+        </SubHeading>
+        <p className="mb-3">
+          During the reign of the 33rd King, Songtsen Gampo, eminent physicians
+          from India (Bhardvaj), China (Han Wang Hang De), and Persia (Galenos)
+          were invited to share their knowledge with Tibetan physicians. Each
+          physician wrote a treatise that was later incorporated into a text
+          called Mijigpe-Tsoncha (A Fearless Weapon), which contains seven
+          volumes. This was presented to the king.
+        </p>
+        <p className="mb-4">
+          Although the Indian and Chinese physicians returned to their countries,
+          Galenos remained in Tibet to practice and teach, and wrote several
+          texts on medicine. In addition, King Songtsen Gampo's Chinese wife
+          Kong-jo had brought a Chinese medical text with her, which was
+          translated into Tibetan by Hashang Maha Deva and Dharma Kosha.
+        </p>
+
+        {/* ── TRISONG DEUTSEN ── */}
+        <SubHeading>
+          Dharma King Trisong Deutsen (742–797 A.D.) — according to{" "}
+          <em>Dungkar tsigzod chenmo</em>
+        </SubHeading>
+        <p className="mb-4">
+          In the 8th century, King Trisong Deutsen invited several great
+          physicians for the first ever known medical conference at Samye, Tibet.
+          In attendance there were eminent physicians from India, China, Persia,
+          East Turkistan, and Nepal. Elder Yuthog Yonten Gonpo represented
+          Tibet. The conference lasted for several days, during which the
+          delegates discussed the theories and practices of their medical systems
+          in comparison to those of the others.
+        </p>
+
+        {/* ── ELDER YUTHOG ── */}
+        <SectionHeading>
+          Elder Yuthog Yonten Gonpo (708–833 A.D.) — according to{" "}
+          <em>gSo-rig Kuns 'Dus</em>
+        </SectionHeading>
+
+        <FloatImg
+          src={image2}
+          alt="Elder Yuthog Yonten Gonpo"
+          caption="Elder Yuthog Yonten Gonpo"
+          side="left"
+        />
+
+        <p className="mb-3">
+          Yuthog Yonten Gonpo was born at Toelung Kyina to Yuthog Khyungpo
+          Dorjee and Gyapa Choeky Dolma on June 25, 708 A.D. In the tradition
+          and father-son lineage, he learned from his father and started
+          practicing basic elements of medical science at an early age. In
+          order to test his knowledge, the King Me-Agtsom summoned him at the
+          age of ten for a debate with the famed Tibetan physician Drangti
+          Gyalnye Kharphug and many others.
+        </p>
+        <p className="mb-3">
+          Yuthog emerged victorious and became supreme among the nine eminent
+          physicians of Tibet. His clever answers to the visiting scholars, such
+          as Shanti Garba of India and Tongsum Gangwa of China, earned Yuthog a
+          great reputation amongst them, and he was respected by all as an
+          emanation of the medicine Buddha.
+        </p>
+        <p className="mb-3">
+          Yuthog Yonten Gonpo became the personal physician to the Tibetan King
+          Me-Agtsom and Trisong Deutsen. He visited India several times to study
+          with eminent physicians and travelled to China as well. He established
+          Tibet's first medical institute called "Tanadug" at Kongpo Manlung in
+          the south in 763 A.D. He devoted his whole life to the propagation and
+          promotion of Tibetan medical science.
+        </p>
+        
+
+        <div className="clear-both" />
+
+        {/* ── TRI-RALPACHEN ── */}
+        <SubHeading>
+          Dharma King Tri-Ralpachen (866–901 A.D.) — according to{" "}
+          <em>Dungkar tsigzod chenmo</em>
+        </SubHeading>
+        <p className="mb-3">
+          Tri-Ralpachen was the 41st Dharma king of Tibet. He is considered very
+          important in the history of Tibetan Buddhism. The Tibetan Empire
+          reached its greatest extent under his rule. In 901 A.D., the Dharma
+          King Tri Ralpa Chen was assassinated by his elder brother Lang Darma
+          and the throne was forcefully seized by the latter. Due to Lang Darma's
+          poor administration, Tibet disintegrated with civil war. Buddhism was
+          completely destroyed in the central parts of Tibet, but survived in
+          the Far East and West. For the next 411 years Tibet was decentralized
+          and weakened.
+        </p>
+
+        {/* ── LOCHEN RINCHEN SANGPO ── */}
+        <SubHeading>
+          Lochen Rinchen Sangpo (958–1056 A.D.) — according to{" "}
+          <em>Ghang-Jong Sorig Tenpae Nyin-je rim-jon gi Namthar Chog-dig</em>
+        </SubHeading>
+        <p className="mb-3">
+          Lochen Rinchen Sangpo was born in 958 A.D. amidst portentous signs, in
+          a small hamlet called Radni, situated in present Tibetan territory
+          beyond the Shipki pass. From his birth he displayed uncommon qualities
+          that soon led him to master the Buddhist scriptures.
+        </p>
+        <p className="mb-4">
+          In the later development of Buddhism, the great translator Lochen
+          Rinchen Sangpo (958–1056 A.D.) with all his effort revived Buddhism
+          and Tibetan Medicine. He travelled to Kashmir and received medical
+          teachings including Ashtanga Samhita and its commentary, Dhaser
+          (Moonlight), and the veterinary text Shali Hotra from the great Pandit
+          Chandra Ananda, which was later translated into Tibetan. His work
+          enhanced the development of both Buddhism and medicine in Tibet.
+        </p>
+
+        {/* ── JUNIOR YUTHOG ── */}
+        <SectionHeading>
+          Junior Yuthog Yonten Gonpo (1126–1202 A.D.) — according to{" "}
+          <em>gSo-rig Kuns 'Dus</em>
+        </SectionHeading>
+
+        <FloatImg
+          src={image3}
+          alt="Junior Yuthog Yonten Gonpo"
+          caption="Junior Yuthog Yonten Gonpo"
+          side="right"
+        />
+
+        <p className="mb-3">
+          Junior Yuthog Yonten Gonpo was the 13th in the lineage of the Elder
+          Yuthog Yonten Gonpo. Born in Goshi Rethang to Yuthog Khyungpo Dorjee
+          and Padma Oden, he began studying medicine at the age of eight. At
+          ten, he received the whole teachings of <em>rGyud-bZhi</em> from
+          Rogton Konchok Kyab, and from the age of eighteen he visited India six
+          times and received teachings from Dakini Palden Trengwa and the sage
+          Caraka.
+        </p>
+        <p className="mb-3">
+          On his return to Tibet, Yuthog Yonten Gonpo dedicated his life to the
+          practice of medicine for the benefit of all sentient beings. He wrote{" "}
+          <em>Serchen</em> (Golden Notes), <em>Zongchen</em> (Wealthy Notes),{" "}
+          <em>cha-lag bco-brGyad</em> (Eighteen Supplementary Works), and{" "}
+          <em>Nyingpo Duspa</em> (Condensation of the Essences) and a commentary
+          on its theoretical points called <em>Thongway Melong</em>. He gave his
+          entire teachings to his heart disciple Yeshe Sung. Of his many
+          disciples, three hundred are well known today.
+        </p>
+
+        <div className="clear-both" />
+
+        {/* ── JANGPA NAMGYAL ── */}
+        <SubHeading>
+          Jangpa Namgyal Dragsang (1395–1475 A.D.) — according to{" "}
+          <em>gSo-rig Kuns 'Dus</em>
+        </SubHeading>
+        <p className="mb-3">
+          Jangpa Namgyal Dragsang was the seventh in the lineage of King Se'u of
+          Minyag. He was awarded the title Rinpoche Thamka by the King
+          Gongma-Sechen. At the age of ten, he learned Sutra, Tantra and
+          medicines from Palden Naggi Rinchen and Bodong Chogle Namgyal. He
+          wrote many books on Buddhist Philosophy, Crafts, and Astrology, and
+          eleven books on Medicine. He is one of the two renowned founders of
+          the Jangpa tradition of Tibetan medicine.
+        </p>
+
+        {/* ── ZURKHAR ── */}
+        <SubHeading>
+          Zurkhar Nyamnyi Dorjee (1439–1475 A.D.) — according to{" "}
+          <em>gSo-rig Kuns 'Dus</em>
+        </SubHeading>
+        <p className="mb-4">
+          Zurkhar Nyamnyi Dorjee was born to Rigzin Phuntsok in the Earth Sheep
+          year. He learned Buddhist philosophy and medicine from many renowned
+          scholars and, at the age of 16, he wrote <em>Manngag-Jewa-Ringsel</em>{" "}
+          (Pith Instructions, Relics in Crores) and many other treatises. He was
+          the founder of the Zurlug tradition of Tibetan medicine. Later, his
+          grandson Zurkhar Lodoe Gyalpo wrote a commentary on{" "}
+          <em>rGyud-bZhi</em> called <em>Mepoi Zal-lung</em> (Oral Instructions
+          of my Forefathers).
+        </p>
+
+        {/* ── REGENT SANGYE GYATSO ── */}
+        <SectionHeading>
+          Regent Sangye Gyatso (1653–1706 A.D.) — according to{" "}
+          <em>gSo-rig Kuns 'Dus</em>
+        </SectionHeading>
+
+        <FloatImg
+          src={image4}
+          alt="Regent Sangye Gyatso"
+          caption="Regent Sangye Gyatso"
+          side="left"
+        />
+
+        <p className="mb-3">
+          Sangye Gyatso was born to Asug and Buthi Gyalmo in the Water Snake
+          year. He began his studies at the age of five and when he was eight,
+          he learned Sutras and Tantras from the Great Fifth Dalai Lama. He
+          learned Astrology and grammar from Darpo Lotsa and medicine from
+          Jangpa Lhunding Namgyal Dorjee, and he became an expert in all these
+          fields.
+        </p>
+        <p className="mb-3">
+          Sangye Gyatso was appointed Regent by the Great Fifth Dalai Lama
+          (1617–1682). During his 26 years in this position, the Potala Palace
+          was rebuilt and expanded to its present size and the golden stupa of
+          the Great Fifth Dalai Lama was built.
+        </p>
+        <p className="mb-3">
+          Under his guidance, seventy-nine medical thangkas depicting human
+          anatomy were produced, the <em>rGyud-bZhi</em> was edited and
+          published, and the Chagpori Medical College was established in Lhasa
+          in 1696 (the Fire Mouse year). Sangye Gyatso wrote many books on
+          astrology, especially <em>Vaidurya-Karpo</em> (White Beryl), and
+          medicine, including <em>Vaidurya sNgon-po</em> (Blue Beryl), the
+          most popular commentary on <em>rGyud-bZhi</em>. He also wrote the
+          famous book on Tibetan Medicinal History titled <em>Sorig Khogboog</em>{" "}
+          and a book on medical practice called <em>Man-ngag Lhen-thab</em>. On
+          the whole he brought Tibetan Medicine and Astrology to a higher level
+          with utmost dedication and sincerity.
+        </p>
+
+        <div className="clear-both" />
+
+        {/* ── KHYENRAB NORBU ── */}
+        <SectionHeading>
+          Rev. Khyenrab Norbu (1883–1962 A.D.) — according to{" "}
+          <em>gSo-rig Kuns 'Dus</em>
+        </SectionHeading>
+
+        <FloatImg
+          src={image5}
+          alt="Rev. Khyenrab Norbu"
+          caption="Rev. Khyenrab Norbu"
+          side="right"
+        />
+
+        <p className="mb-3">
+          Rev. Khyenrab Norbu was born to Astrologer Ngawo-che and Yangchen in
+          the Water Sheep year at Tsethang, southern Tibet. He was admitted to
+          Ngachoe Monastery, and was known for his excellence in studies,
+          intelligence, compassion and humbleness. As a result, he was selected
+          from many young monks as a candidate to study medicine and went to
+          Chagpori Medical College in Lhasa. There he was taught by Dr. Ngawang
+          Choden. He passed his exams in a relatively short time.
+        </p>
+        <p className="mb-3">
+          In order to preserve and expand Tibetan medicine, the Great Thirteenth
+          Dalai Lama (1876–1933) in 1897 appointed Tekhang Jampa Thubwang and
+          Jabung Damchoe Palden as his senior and junior physicians respectively,
+          and ordered them to teach selected students. Khyenrab Norbu, Tenpa
+          Yarphel and Tsultrim Nyandrag were chosen from Chagpori Medical
+          College to study under the senior physician and they received teachings
+          on <em>rGyud-bZhi</em> and its various commentaries.
+        </p>
+        <p className="mb-3">
+          Khyenrab Norbu also learned medicine, astrology, poetry and grammar. He
+          was named "Yangchen rgyas pai Lodoe" as an honour to his hard work. The
+          Great Thirteenth Dalai Lama established Lhasa Men-Tsee-Khang in the
+          year of the Fire Dragon, 1916. Dr. Khyenrab Norbu was appointed to the
+          post of Junior Physician to H.H. The Dalai Lama in 1918 and spent his
+          entire life promoting Tibetan culture, especially medicine and
+          astrology.
+        </p>
+
+        <p className="mb-2 font-semibold text-[12.5px]">He wrote and compiled many books, including:</p>
+        <ul className="list-disc list-inside mb-3 text-[13px] space-y-1 ml-2">
+          <li>
+            <em>gsorig-rgya-tso-nyingpo</em> — Essences from the Ocean of
+            Medical Healing
+          </li>
+          <li>
+            <em>Ngotsar-sergyi-nyema</em> — Wonderful Golden Hair (medicinal
+            plants)
+          </li>
+          <li>
+            <em>Man-byor-nuspa-phyogdus</em> — Condensation of the Effects of
+            the Medicine
+          </li>
+          <li>
+            <em>Duetsi-'bumsang</em> — One Hundred Thousand Good Nectars
+          </li>
+          <li>
+            <em>Rigden-nyingthig</em> — Endowment of Knowledge of the
+            Heart-Drop (astrology)
+          </li>
+        </ul>
+
+        <div className="clear-both" />
+
+        {/* 13th Dalai Lama image */}
+        <FloatImg
+          src={image6}
+          alt="H.H. the 13th Dalai Lama"
+          caption="H.H. the 13th Dalai Lama"
+          side="left"
+        />
+        
+
+        <p className="mb-3">
+          Some of the contemporary eminent physicians like Dr. Tenzin Choedak
+          and Dr. Lobsang Wangyal (the Senior and Junior physicians to H.H. The
+          XIV Dalai Lama), Dr. Yeshi Dhonden (the former personal physician to
+          H.H. The XIV Dalai Lama) and Dr. Jampa Thinley (the former director
+          of Lhasa Men-Tsee-Khang) were all his disciples. He died at the age of
+          eighty in the Water Tiger year, 1962.
+        </p>
+
+        <div className="clear-both" />
+
+        {/* ── DARK PERIOD ── */}
+        <SectionHeading>A Dark Period in Tibetan History</SectionHeading>
+        <p className="mb-3">
+          The Chinese invaded Tibet from the east in 1949. On 10th March, 1959,
+          the Chinese ruthlessly suppressed peaceful Tibetan demonstrations in
+          Lhasa by artillery fire and bombardment. His Holiness the 14th Dalai
+          Lama, followed by thousands of Tibetans, escaped into exile in India.
+        </p>
+        <p className="mb-4">
+          During the Cultural Revolution (1966–1976) the Chinese destroyed more
+          than 6,000 monasteries, demolished statues, burnt religious and
+          astrology-medicine books, destroyed forests, and wreaked unimaginable
+          destruction to flora and fauna. As a direct consequence of Chinese
+          repression, more than 1.2 million Tibetans died.
+        </p>
+
+        {/* ── MEN-TSEE-KHANG IN EXILE ── */}
+        <SectionHeading>Men-Tsee-Khang in Exile</SectionHeading>
+
+        <FloatImg
+          src={image7}
+          alt="H.H. the 14th Dalai Lama"
+          caption="H.H. the 14th Dalai Lama"
+          side="right"
+        />
+
+        <p className="mb-3">
+          The Chinese have used every possible means to exterminate the culture
+          and identity of the Tibetan people. In order to preserve and promote
+          the richness of Tibetan culture, many institutions, monasteries and
+          schools were re-established in India under the auspices of His
+          Holiness the 14th Dalai Lama.
+        </p>
+        <p className="mb-3">
+          Men-Tsee-Khang (Tibetan Medical and Astro. Institute of H.H. the Dalai
+          Lama) was re-established under the visionary guidance of His Holiness
+          the 14th Dalai Lama on March 23rd, 1961, with Dr. Yeshi Dhonden and
+          Ven. Dukhorwa Lodoe Gyatso as the heads of the Medical and
+          Astrological centers, respectively. With the arrival of other senior
+          doctors from Tibet like Dr. Tenzin Choedak, Dr. Lobsang Wangyal and
+          Dr. Nyarongshar Kunga Gyurmey in the 1980s, the institution was
+          further developed.
+        </p>
+        <p className="mb-3">
+          Since its inception, the institution has undergone significant
+          development. Today it houses various academic departments like the
+          Pharmaceutical, Clinical Research, Materia Medica, Medical and Astro.
+          Literary Research, Herbal Product Research, Astrology department and
+          the College where Tibetan doctors and astrologers are trained.
+        </p>
+        <p className="mb-4">
+          The Pharmacy manufactures different forms of remedial pills; the
+          Clinical Research conducts research on disorders like diabetes, cancer,
+          hepatitis and hypertension in collaboration with western scientific
+          systems of analysis; Materia Medica identifies and documents herbs using
+          correct Latin names; Medical & Astro. Literary Research documents and
+          publishes Tibetan medical and astrological treatises; Herbal Products
+          Research manufactures herbal products for rejuvenating body and skin
+          based on traditional Tibetan formulation; and the Quality Assurance
+          Laboratory checks the quality of raw materials, medicines and herbal
+          health care products according to scientific methods as per the norms
+          of GMP (Good Manufacturing Practice).
+        </p>
+
+        <div className="clear-both" />
+
+        {/* ── REFERENCES ── */}
+        <div className="border-t border-gray-300 mt-10 pt-5">
+          <h2 className="text-sm font-bold text-gray-700 mb-2 uppercase tracking-wide">
+            References
           </h2>
-
-          <div className="mb-8">
-            <h3 className="text-xl font-serif text-spa-green mb-3">Lha-Thothori Nyentsen (c. 5th Century CE)</h3>
-            <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-              During the reign of the 28th Tibetan king, <strong>Lha-Thothori Nyentsen</strong>, the first documented medical texts
-              arrived in Tibet. Sacred objects and scriptures, including early Buddhist and medical texts, are said to have descended
-              miraculously upon the royal palace of Yumbu Lakhang. Though their content could not yet be read, they were preserved
-              with great reverence, marking the beginning of formal medical knowledge in Tibet.
-            </p>
-          </div>
-
-          <div className="mb-8">
-            <h3 className="text-xl font-serif text-spa-green mb-3">Dung-gi Thorchog Chenmo</h3>
-            <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-              Around the same era, <strong>Dung-gi Thorchog Chenmo</strong>, a legendary physician, is credited with establishing
-              early healing practices in Tibet. He was renowned for his skill in treating illnesses and his deep understanding
-              of medicinal plants and remedies native to the Tibetan plateau. His knowledge formed part of the indigenous
-              healing tradition that was later integrated with foreign medical systems.
-            </p>
-          </div>
-
-          <div className="mb-8">
-            <h3 className="text-xl font-serif text-spa-green mb-3">Dharma King Songtsen Gampo (617–650 CE)</h3>
-            <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-              The unification of Tibet under the great <strong>Dharma King Songtsen Gampo</strong> marked a transformative period
-              for Tibetan Medicine. His ministers developed the Tibetan script, enabling the translation of foreign texts. The
-              king invited physicians from India, China, Persia (Dachen), and other regions to his court, facilitating the
-              first major synthesis of medical knowledge in Tibet.
-            </p>
-            <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-              Three renowned physicians — <strong>Bharadhvaja</strong> from India, <strong>Hanthen Hankang</strong> from China,
-              and <strong>Galenos</strong> from Persia — came to Tibet and collaborated to compile the <em>Sman dpyad zla ba'i rgyal po</em>
-              (Lunar King of Medical Practice), a comprehensive medical text that became one of Tibet's earliest formal medical compilations.
-            </p>
-          </div>
-        </section>
-
-        {/* Trisong Deutsen */}
-        <section className="mb-12">
-          <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
-            <img
-              src={sliderDalaiLama}
-              alt="Tibetan medical heritage — His Holiness the Dalai Lama"
-              className="w-full md:w-64 lg:w-72 h-48 md:h-auto object-cover rounded-lg shadow-md flex-shrink-0"
-              loading="lazy"
-            />
-            <div>
-              <h2 className="text-2xl md:text-3xl font-serif text-spa-green-deep mb-4">Dharma King Trisong Deutsen (755–797 CE)</h2>
-              <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-                The golden age of early Tibetan Medicine came during the reign of <strong>King Trisong Deutsen</strong>, who invited
-                the greatest physicians from nine countries to Tibet. A grand medical conference was held, resulting in the
-                translation of numerous medical texts into Tibetan. This conference produced the <em>Somaradza</em>, a major
-                compilation of medical knowledge.
-              </p>
-              <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-                It was during this period that the legendary physician <strong>Yuthog Yontan Gonpo the Elder</strong> (708–833 CE)
-                emerged as the greatest medical scholar Tibet had ever known. Yuthog Yontan Gonpo undertook extensive journeys
-                to India where he studied under renowned Ayurvedic masters, bringing back invaluable knowledge to enrich the
-                Tibetan medical tradition.
-              </p>
-              <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed">
-                Yuthog the Elder is credited with compiling the foundational version of the <em>Gyushi</em> (Four Tantras), which
-                integrated the wisdom of multiple medical traditions into a coherent and comprehensive system uniquely adapted
-                to the Tibetan context.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Yuthog the Younger */}
-        <section className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-serif text-spa-green-deep mb-4 border-b border-spa-gold/30 pb-3">
-            Yuthog Yontan Gonpo the Younger (1126–1202 CE)
-          </h2>
-          <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-            The <em>Gyushi</em> reached its definitive form through the work of <strong>Yuthog Yontan Gonpo the Younger</strong>,
-            widely regarded as the "Father of Tibetan Medicine." Born into a lineage of physicians, he demonstrated extraordinary
-            medical talent from childhood. He made three journeys to India and engaged in extensive study with the greatest
-            Ayurvedic masters of his time.
-          </p>
-          <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-            Upon his return, Yuthog the Younger systematically revised, expanded, and completed the Four Tantras. He added
-            several important chapters, incorporated new clinical observations, and integrated tantric healing practices and
-            spiritual exercises into the medical curriculum. He also founded a medical school that trained hundreds of
-            physicians throughout Tibet.
-          </p>
-          <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-            The <em>Gyushi</em> (Four Tantras) as completed by Yuthog the Younger consists of:
-          </p>
-          <ul className="list-disc pl-6 mb-4 space-y-2 text-foreground/80 font-sans text-sm sm:text-base">
-            <li><strong>Root Tantra</strong> (<em>Tsagyud</em>) — Overview of the entire system in 6 chapters</li>
-            <li><strong>Explanatory Tantra</strong> (<em>Shezhey Gyud</em>) — Detailed anatomy, physiology, and pathology in 31 chapters</li>
-            <li><strong>Oral Tradition Tantra</strong> (<em>Mennag Gyud</em>) — Clinical practice and treatment in 92 chapters</li>
-            <li><strong>Subsequent Tantra</strong> (<em>Chima Gyud</em>) — Diagnostics, pharmacology, and therapy in 27 chapters</li>
+          <ul className="text-[11.5px] text-gray-600 space-y-1 leading-snug">
+            <li>
+              <em>gSo-rig Kun 'Dus las bod kyi gSo-ba rig-pa</em>, Tibet
+              people's printing press, 2000
+            </li>
+            <li>
+              <em>GangsChan mKhasGrub rimbyon mingmZod</em>, Kansui Mirig
+              printing press, 1992
+            </li>
+            <li>
+              <em>
+                Gang–lJongs gSo-rig bsTan-pa'i Nyin-byad rim-byon gyi
+                rNam-thar phyogs-bsGrigs
+              </em>
+              , Dharamsala Men-Tsee-Khang, 1992
+            </li>
+            <li>Tibetan Annual Almanac of Water Dragon Year, 2012</li>
+            <li>
+              <em>Dung dkar_Tshig mdzod chen mo</em>, Chinese Tibetan studies
+              printing press, 2002
+            </li>
           </ul>
-          <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed">
-            Beyond his scholarly contributions, Yuthog the Younger was also a great tantric master. He composed the
-            <em>Yuthog Nyingthig</em> (Heart Essence of Yuthog), a profound cycle of practice combining healing and spiritual
-            development, which is still practiced by Tibetan physicians today.
-          </p>
-        </section>
-
-        {/* Post-Yuthog Developments */}
-        <section className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-serif text-spa-green-deep mb-6 border-b border-spa-gold/30 pb-3">
-            The Physician Kings and Later Masters
-          </h2>
-
-          <div className="mb-8">
-            <h3 className="text-xl font-serif text-spa-green mb-3">Physician King Tri-Ralpachen (c. 9th Century)</h3>
-            <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-              <strong>Tri-Ralpachen</strong>, grandson of Trisong Deutsen, continued the royal tradition of supporting medical
-              scholarship. During his reign, further medical texts were translated into Tibetan and the training of royal physicians
-              was systematized. His patronage helped establish medicine as an integral part of Tibetan monastic and secular education.
-            </p>
-          </div>
-
-          <div className="mb-8">
-            <h3 className="text-xl font-serif text-spa-green mb-3">Lochen Rinchen Zangpo (958–1055 CE)</h3>
-            <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-              Known as the "Great Translator," <strong>Lochen Rinchen Zangpo</strong> was instrumental in the second transmission
-              of Buddhism and medical knowledge into Tibet following a period of religious suppression. He translated numerous
-              Sanskrit medical and pharmacological texts, greatly enriching the Tibetan medical literature and introducing
-              refined Indian Ayurvedic knowledge to a new generation of Tibetan scholars and healers.
-            </p>
-          </div>
-
-          <div className="mb-8">
-            <h3 className="text-xl font-serif text-spa-green mb-3">Jangtse Tenpai Drongme (14th–15th Century)</h3>
-            <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-              <strong>Jangtse Tenpai Drongme</strong> was a prominent physician-scholar who composed important commentaries on
-              the Four Tantras. He worked to make the complex medical teachings more accessible to students and practitioners,
-              systematizing the curriculum of Tibetan medical education. His contributions helped maintain the integrity
-              and depth of the tradition during a period of political transition in Tibet.
-            </p>
-          </div>
-
-          <div className="mb-8">
-            <h3 className="text-xl font-serif text-spa-green mb-3">Zurkhar Nyamni Dorje (1439–1475 CE)</h3>
-            <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-              <strong>Zurkhar Nyamni Dorje</strong> was the founder of the Zurkar medical tradition, one of the two great
-              scholarly lineages of Tibetan Medicine (the other being the Jangtse tradition). He authored extensive commentaries
-              on the Four Tantras and compiled important pharmacological works documenting the medicinal properties of hundreds
-              of herbs, minerals, and animal substances found in the Tibetan medical pharmacopoeia.
-            </p>
-          </div>
-        </section>
-
-        {/* Desi Sangye Gyatso */}
-        <section className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-serif text-spa-green-deep mb-4 border-b border-spa-gold/30 pb-3">
-            Desi Sangye Gyatso and the Blue Beryl (17th Century)
-          </h2>
-          <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-            <strong>Desi Sangye Gyatso</strong> (1653–1705), the regent of the Fifth Dalai Lama, made one of the most significant
-            contributions to Tibetan medical literature by composing the <em>Vaidurya Ngonpo</em> (Blue Beryl) — a monumental
-            commentary on the Four Tantras consisting of four volumes.
-          </p>
-          <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-            Accompanying the Blue Beryl was the famous <em>Mewang Gyushi</em> — a set of 79 illustrated medical thangkas (scroll
-            paintings) that visually depicted the entire content of the Four Tantras. These thangkas covered anatomy, disease
-            classification, diagnosis, pharmacology, and therapeutic procedures, serving as a comprehensive visual medical
-            encyclopedia. They remain among the most remarkable achievements in the history of medical illustration.
-          </p>
-          <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-            Desi Sangye Gyatso also re-established and expanded the <strong>Men-Tsee-Khang</strong> (Medical and Astrological
-            Institute) at Chakpori Hill in Lhasa in 1696, creating the most important institution for training Tibetan physicians.
-            Chakpori became renowned throughout Tibet and neighboring regions as the premier center of traditional medical education.
-          </p>
-        </section>
-
-        {/* Trapmi Sangye Gyatso */}
-        <section className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-serif text-spa-green-deep mb-4 border-b border-spa-gold/30 pb-3">
-            Trapmi Sangye Gyatso and Further Contributions
-          </h2>
-          <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-            <strong>Trapmi Sangye Gyatso</strong> continued the scholarly tradition of his predecessors, producing important
-            works on Tibetan pharmacology and clinical medicine. He worked to standardize the preparation of traditional
-            Tibetan medicines, establishing quality criteria for medicinal ingredients and refining the techniques for
-            compounding complex multi-ingredient formulations, including the renowned <em>Rinchen</em> (precious) pills that
-            remain among the most valued preparations in Tibetan Medicine.
-          </p>
-        </section>
-
-        {/* Rev. Khyenrab Norbu */}
-        <section className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-serif text-spa-green-deep mb-4 border-b border-spa-gold/30 pb-3">
-            Rev. Khyenrab Norbu and the Lhasa Men-Tsee-Khang (20th Century)
-          </h2>
-          <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-            In 1916, at the invitation of the 13th Dalai Lama, the great physician <strong>Khyenrab Norbu</strong> (1883–1962)
-            established a new Tibetan Medical and Astrological Institute — the <strong>Men-Tsee-Khang</strong> — in Lhasa.
-            This institution expanded upon the earlier Chakpori school and introduced systematic medical training, combining
-            traditional apprenticeship with structured academic instruction.
-          </p>
-          <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-            Under Khyenrab Norbu's leadership, the Men-Tsee-Khang trained hundreds of physicians, standardized medical
-            examination protocols, and expanded the production of traditional Tibetan medicines. He authored important
-            medical texts and worked to preserve the richness of the Tibetan medical heritage during a period of significant
-            political change.
-          </p>
-        </section>
-
-        {/* Sino-Tibetan Exchange */}
-        <section className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-serif text-spa-green-deep mb-4 border-b border-spa-gold/30 pb-3">
-            Sino-Tibetan Medical Exchange
-          </h2>
-          <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-            Throughout the history of Tibetan Medicine, there was significant exchange with Chinese medical traditions.
-            The diplomatic relationships between Tibetan kings and Chinese emperors facilitated the exchange of physicians,
-            texts, and medicinal substances. Chinese medical concepts relating to diagnosis, pulse reading, and the use of
-            certain herbs were incorporated and adapted into the Tibetan system.
-          </p>
-          <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-            This exchange was particularly significant during the Tang Dynasty (618–907 CE), when the marriage of the
-            Chinese Princess Wencheng to King Songtsen Gampo brought with her a large collection of Chinese medical texts
-            and physicians. The resulting synthesis enriched both traditions and helped shape the distinctive character
-            of Tibetan Medicine as a truly integrative system.
-          </p>
-        </section>
-
-        {/* A Dark Period */}
-        <section className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-serif text-spa-green-deep mb-4 border-b border-spa-gold/30 pb-3">
-            A Dark Period: Suppression and Survival (1950s–1970s)
-          </h2>
-          <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-            The Chinese occupation of Tibet beginning in 1950, and the subsequent Cultural Revolution (1966–1976), posed
-            an existential threat to Tibetan Medicine. The Chakpori medical school was destroyed, the Lhasa Men-Tsee-Khang
-            was closed, physicians were persecuted, and the practice of traditional medicine was suppressed across Tibet.
-          </p>
-          <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-            Many physicians fled Tibet following the Dalai Lama's exile in 1959. This diaspora, while tragically displacing
-            practitioners and destroying institutions within Tibet, ultimately served to transmit the living tradition of
-            Tibetan Medicine to the wider world. Physicians settled in India, Nepal, Bhutan, and Europe, where they continued
-            to practice and teach.
-          </p>
-        </section>
-
-        {/* New Free-Flowing Era */}
-        <section className="mb-12">
-          <h2 className="text-2xl md:text-3xl font-serif text-spa-green-deep mb-4 border-b border-spa-gold/30 pb-3">
-            Revival in Exile: A New Free-Flowing Era
-          </h2>
-          <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-            In 1961, under the direction of <strong>His Holiness the 14th Dalai Lama</strong>, the <strong>Men-Tsee-Khang</strong>
-            was re-established in Dharamsala, India — the seat of the Tibetan Government in Exile. This revival marked
-            a new era for Tibetan Medicine, enabling its systematic practice, teaching, and research to continue and
-            expand under freedom.
-          </p>
-          <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-            The Men-Tsee-Khang in Dharamsala has since grown into a major institution with a medical college offering
-            five-year training programs, extensive pharmacological research facilities, a network of branch clinics
-            throughout India and Nepal, and an international outreach program. It has been instrumental in preserving
-            and disseminating authentic Tibetan medical knowledge globally.
-          </p>
-          <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed mb-4">
-            Today, Tibetan Medicine is practiced across South Asia, East Asia, Europe, and North America. Research
-            programs in collaboration with modern universities are investigating the pharmacological basis of traditional
-            Tibetan remedies, finding promising results in areas ranging from neurological disorders to cancer research.
-            In 2018, UNESCO recognized Sowa Rigpa as an Intangible Cultural Heritage, affirming its global cultural
-            and medical significance.
-          </p>
-          <p className="text-foreground/80 font-sans text-sm sm:text-base leading-relaxed">
-            Organizations such as <strong>Sang-Druk Tibetan Herbal Clinic</strong> carry forward this precious tradition,
-            making the healing wisdom of Sowa Rigpa available to those who seek holistic, time-tested remedies rooted
-            in one of the world's great healing traditions.
-          </p>
-        </section>
-
-        {/* References */}
-        <section className="mb-12 border-t border-spa-gold/30 pt-8">
-          <h2 className="text-xl font-serif text-spa-green-deep mb-4">References</h2>
-          <ul className="space-y-2 text-foreground/60 font-sans text-xs sm:text-sm">
-            <li>Desi Sangye Gyatso. <em>Vaidurya Ngonpo</em> (Blue Beryl Commentary on the Four Tantras). 17th Century.</li>
-            <li>Drungtso, Tsering Thakchoe &amp; Drungtso, Tsering Dolma. <em>Tibetan-English Dictionary of Tibetan Medicine and Astrology</em>. Dharamsala: Drungtso Publications, 2005.</li>
-            <li>Gyatso, Janet. <em>Being Human in a Buddhist World: An Intellectual History of Medicine in Early Modern Tibet</em>. Columbia University Press, 2015.</li>
-            <li>Khangkar, Lobsang Dolma. <em>Lectures on Tibetan Medicine</em>. Dharamsala: Library of Tibetan Works and Archives, 1986.</li>
-            <li>Men-Tsee-Khang. <em>Introduction to Tibetan Medicine</em>. Dharamsala: Men-Tsee-Khang Publications, 2001.</li>
-            <li>Parfionovitch, Yuri; Dorje, Gyurme; Meyer, Fernand (eds.). <em>Tibetan Medical Paintings: Illustrations to the Blue Beryl Treatise of Sangye Gyamtso</em>. London: Serindia Publications, 1992.</li>
-            <li>Yuthog Yontan Gonpo (the Younger). <em>Gyushi</em> (Four Tantras). 12th Century. Translated by Men-Tsee-Khang.</li>
-          </ul>
-        </section>
+        </div>
       </article>
 
       <Footer />
