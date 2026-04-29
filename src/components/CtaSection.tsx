@@ -12,7 +12,7 @@ const CtaSection = () => {
         <div className="absolute inset-0 bg-spa-green-deep/40" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16 grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
         <Reveal>
           <p className="text-xs tracking-[0.25em] uppercase text-spa-gold mb-4 font-sans font-medium">— Get In Touch —</p>
           <h2 className="text-3xl md:text-4xl lg:text-[44px] leading-[1.15] text-primary-foreground mb-5 text-balance">
@@ -33,7 +33,7 @@ const CtaSection = () => {
         </Reveal>
 
         <Reveal variant="scale" delay={120}>
-          <div className="glass rounded-3xl p-7 lg:p-8 shadow-elegant">
+          <div className="glass rounded-3xl p-5 sm:p-7 lg:p-8 shadow-elegant">
             <h3 className="font-serif text-2xl mb-1">Quick Inquiry</h3>
             <p className="text-muted-foreground text-sm font-sans mb-6">We respond within minutes on WhatsApp.</p>
             <InquiryForm />

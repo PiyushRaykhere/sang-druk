@@ -1,10 +1,10 @@
 import { useState, useCallback, useEffect } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.webp";
 import sliderDalaiLama from "@/assets/slider-dalailama.webp";
 import sliderMenlha from "@/assets/slider-menlha.webp";
 import sliderProduction from "@/assets/slider-production.webp";
 import sliderQc from "@/assets/slider-qc.webp";
-
 
 const slides = [
   { img: heroBg, alt: "Sang-Druk Tibetan Herbal Clinic" },
@@ -26,25 +26,75 @@ const HeroSection = () => {
   }, [next]);
 
   return (
-    <section className="relative w-full aspect-[15/9] bg-[#999967] pt-[140px] sm:pt-[150px] lg:pt-[210px]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="relative w-full aspect-[21/9] overflow-hidden  shadow-elegant bg-spa-green-deep/10">
-          {slides.map((slide, i) => (
-            <div
+    /*
+      pt values clear the fixed navbar at each breakpoint:
+        mobile  (<sm)  : top-bar ≈ 72px  → pt-[72px]
+        sm      (640px): top-bar ≈ 88px  → pt-[88px]
+        md      (768px): top-bar ≈ 104px → pt-[104px]
+        lg      (1024px): top-bar ≈ 112px + gold-nav 47px = 159px → pt-[159px]
+    */
+    <section className="w-full bg-spa-green-deep pt-[72px] sm:pt-[88px] md:pt-[104px] lg:pt-[159px]">
+      <div className="bg-spa-green-deep/10 px-3 py-3 sm:px-5 sm:py-4 md:px-8 md:py-5">
+      <div className="relative w-full aspect-video max-h-[85vh] min-h-[200px] overflow-hidden">
+        {slides.map((slide, i) => (
+          <div
+            key={i}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              i === current ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            <img
+              src={slide.img}
+              alt={slide.alt}
+              className="w-full h-full object-contain object-center"
+              width={1920}
+              height={1080}
+              loading={i === 0 ? "eager" : "lazy"}
+            />
+          </div>
+        ))}
+
+        {/* Prev arrow */}
+        <button
+          onClick={prev}
+          aria-label="Previous slide"
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/65 text-white transition-colors"
+        >
+          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+        </button>
+
+        {/* Next arrow */}
+        <button
+          onClick={next}
+          aria-label="Next slide"
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 flex items-center justify-center w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/40 hover:bg-black/65 text-white transition-colors"
+        >
+          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+        </button>
+
+        {/* Dot indicators */}
+        <div className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
+          {slides.map((_, i) => (
+            <button
               key={i}
-              className={`absolute inset-0 transition-opacity duration-1000 ${i === current ? "opacity-100" : "opacity-0"}`}
-            >
-              <img
-                src={slide.img}
-                alt={slide.alt}
-                className="w-full h-full object-cover object-center"
-                width={1920}
-                height={1080}
-                loading={i === 0 ? "eager" : "lazy"}
-              />
-            </div>
+              onClick={() => setCurrent(i)}
+              aria-label={`Go to slide ${i + 1}`}
+              className={`rounded-full transition-all duration-300 ${
+                i === current
+                  ? "w-6 h-2 bg-spa-gold"
+                  : "w-2 h-2 bg-white/50 hover:bg-white/80"
+              }`}
+            />
           ))}
         </div>
+
+        {/* Slide caption */}
+        <div className="absolute bottom-8 sm:bottom-10 left-0 right-0 text-center px-4 z-10 pointer-events-none">
+          <p className="text-white/75 text-xs sm:text-sm font-sans tracking-wide drop-shadow">
+            {slides[current].alt}
+          </p>
+        </div>
+      </div>
       </div>
     </section>
   );

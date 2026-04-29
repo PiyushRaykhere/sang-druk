@@ -14,7 +14,7 @@ const faqs = [
 
 const FaqSection = () => {
   return (
-    <section className="relative py-20 lg:py-28 max-w-7xl mx-auto px-6 lg:px-16">
+    <section className="relative py-14 lg:py-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
       <Reveal className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
         <div>
           <p className="text-xs tracking-[0.25em] uppercase text-spa-green/70 mb-4 font-sans font-medium">— FAQ —</p>
@@ -28,7 +28,7 @@ const FaqSection = () => {
       </Reveal>
 
       <Reveal>
-        <div className="grid md:grid-cols-2 gap-x-8 gap-y-2 bg-gradient-card rounded-3xl p-6 lg:p-10 shadow-soft border border-border/50">
+        <div className="grid md:grid-cols-2 gap-x-8 gap-y-0 bg-gradient-card rounded-3xl p-4 sm:p-6 lg:p-10 shadow-soft border border-border/50">
           <Accordion type="multiple" className="space-y-0">
             {faqs.slice(0, 4).map((f, i) => (
               <AccordionItem key={i} value={`left-${i}`} className="border-b border-border/60 last:border-b-0 md:last:border-b">

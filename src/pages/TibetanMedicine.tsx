@@ -60,18 +60,18 @@ const TibetanMedicine = () => {
     <div className="min-h-screen">
       <div className="bg-spa-green">
         <Navbar />
-        <div className="pt-52 pb-16 px-6 lg:px-16 max-w-7xl mx-auto">
+        <div className="pt-28 sm:pt-36 md:pt-44 lg:pt-52 pb-10 sm:pb-16 px-4 sm:px-6 lg:px-16 max-w-7xl mx-auto">
           <Link to="/" className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground text-sm font-sans mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Back to Home
           </Link>
-          <h1 className="text-4xl md:text-5xl text-primary-foreground mb-4">Rinchen Drangjor — Precious Pills</h1>
+          <h1 className="text-2xl sm:text-4xl md:text-5xl text-primary-foreground mb-4">Rinchen Drangjor — Precious Pills</h1>
           <p className="text-primary-foreground/70 font-sans text-sm max-w-2xl">
             The most revered formulations in Tibetan Medicine, prepared through rigorous detoxification processes and enriched with spiritual blessing.
           </p>
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 lg:px-16 py-16 space-y-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-16 py-10 sm:py-16 space-y-6 sm:space-y-8">
         <div className="bg-section-bg rounded-lg p-6 mb-8">
           <h3 className="font-serif text-xl mb-3">Instructions for Taking Precious Pills</h3>
           <p className="text-muted-foreground text-sm font-sans leading-relaxed">

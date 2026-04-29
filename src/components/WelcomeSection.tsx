@@ -4,13 +4,13 @@ const WelcomeSection = () => {
   return (
     <section className="relative py-20 lg:py-24 overflow-hidden bg-gradient-section">
       {/* Decorative gradient blobs */}
-      <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full bg-gradient-radial-mint blur-3xl opacity-70 pointer-events-none" />
-      <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] rounded-full bg-gradient-gold-soft blur-3xl opacity-50 pointer-events-none" />
+      <div className="absolute -top-16 -left-16 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] rounded-full bg-gradient-radial-mint blur-3xl opacity-70 pointer-events-none" />
+      <div className="absolute -bottom-20 -right-20 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] rounded-full bg-gradient-gold-soft blur-3xl opacity-50 pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-16">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-16">
         <Reveal className="text-center max-w-4xl mx-auto">
-          <p className="text-lg tracking-[0.25em] uppercase text-spa-green/70 mb-4 font-sans font-medium">— Welcome —</p>
-          <h2 className="text-3xl md:text-4xl lg:text-[46px] leading-[1.15] mb-8 text-balance">
+          <p className="text-sm sm:text-base lg:text-lg tracking-[0.25em] uppercase text-spa-green/70 mb-4 font-sans font-medium">— Welcome —</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[46px] leading-[1.15] mb-6 sm:mb-8 text-balance">
             Welcome to <em className="italic text-spa-green">Sang-Dr̈uk Tibetan Herbal Clinic</em>
           </h2>
 
@@ -31,7 +31,7 @@ const WelcomeSection = () => {
               Our mission is to offer safe, natural, and personalized treatment through the timeless wisdom of Tibetan medicine—helping every patient achieve true balance, health, and harmony             </p>
           </div>
 
-          <div className="mt-12 inline-block glass rounded-2xl px-8 py-6 shadow-elevated">
+          <div className="mt-8 sm:mt-12 inline-block glass rounded-2xl px-5 sm:px-8 py-5 sm:py-6 shadow-elevated w-full sm:w-auto">
             <p className="text-foreground font-semibold font-serif text-lg md:text-xl italic leading-relaxed text-balance">
               "True healing goes beyond treating symptoms; it begins when wisdom and compassion unite to restore balance, harmony, and lasting well-being."
             </p>

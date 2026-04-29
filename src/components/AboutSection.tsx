@@ -6,8 +6,8 @@ import Reveal from "@/components/Reveal";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="relative py-20 lg:py-26 px-6 lg:px-16 max-w-7xl mx-auto">
-      <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section id="about" className="relative py-14 lg:py-24 px-4 sm:px-6 lg:px-16 max-w-7xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-10 lg:gap-16 items-center">
         <Reveal>
           <p className="text-l tracking-[0.25em] uppercase text-spa-green/70 mb-4 font-sans font-medium">— About Us —</p>
           <h2 className="text-3xl md:text-4xl lg:text-[37px] leading-[1.15] mb-6 text-balance">
@@ -29,22 +29,22 @@ const AboutSection = () => {
         </Reveal>
 
         <Reveal variant="scale" delay={120}>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
             <div className="space-y-4">
               <div className="overflow-hidden rounded-2xl shadow-elevated card-lift">
-                <img src={aboutImg} alt="Tibetan herbal medicine" className="w-full h-44 object-cover" loading="lazy" width={320} height={200} />
+                <img src={aboutImg} alt="Tibetan herbal medicine" className="w-full h-36 sm:h-44 object-cover" loading="lazy" width={320} height={200} />
               </div>
               <div className="overflow-hidden rounded-2xl shadow-elevated card-lift">
-                <img src={qcImg} alt="Quality control at Tibetan medicine lab" className="w-full h-44 object-cover" loading="lazy" width={320} height={200} />
+                <img src={qcImg} alt="Quality control at Tibetan medicine lab" className="w-full h-36 sm:h-44 object-cover" loading="lazy" width={320} height={200} />
               </div>
             </div>
             <div className="space-y-4 mt-8">
               <div className="overflow-hidden rounded-2xl shadow-premium card-lift">
-                <img src={directorImg} alt="Director of Sang-Druk Tibetan Herbal Clinic" className="w-full h-56 object-cover" loading="lazy" width={320} height={300} />
+                <img src={directorImg} alt="Director of Sang-Druk Tibetan Herbal Clinic" className="w-full h-48 sm:h-56 object-cover" loading="lazy" width={320} height={300} />
               </div>
-              <div className="bg-gradient-green text-primary-foreground rounded-2xl p-6 shadow-elegant relative overflow-hidden">
-                <Award className="absolute -top-2 -right-2 w-20 h-20 text-primary-foreground/10" />
-                <span className="text-4xl font-serif block mb-1">2,500+</span>
+              <div className="bg-gradient-green text-primary-foreground rounded-2xl p-4 sm:p-6 shadow-elegant relative overflow-hidden">
+                <Award className="absolute -top-2 -right-2 w-16 sm:w-20 h-16 sm:h-20 text-primary-foreground/10" />
+                <span className="text-3xl sm:text-4xl font-serif block mb-1">2,500+</span>
                 <span className="text-xs font-sans text-primary-foreground/80 uppercase tracking-wider">Years of Sowa-Rigpa</span>
               </div>
             </div>

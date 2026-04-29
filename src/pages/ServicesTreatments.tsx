@@ -21,23 +21,23 @@ const ServicesTreatments = () => {
     <div className="min-h-screen">
       <div className="bg-spa-green">
         <Navbar />
-        <div className="pt-52 pb-16 px-6 lg:px-16 max-w-7xl mx-auto">
+        <div className="pt-28 sm:pt-36 md:pt-44 lg:pt-52 pb-10 sm:pb-16 px-4 sm:px-6 lg:px-16 max-w-7xl mx-auto">
           <Link to="/" className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground text-sm font-sans mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Back to Home
           </Link>
-          <h1 className="text-4xl md:text-5xl text-primary-foreground mb-4">Services & Treatments</h1>
+          <h1 className="text-2xl sm:text-4xl md:text-5xl text-primary-foreground mb-4">Services & Treatments</h1>
           <p className="text-primary-foreground/70 font-sans text-sm max-w-2xl">
             True healing arises when compassion meets wisdom, restoring balance in body, energy, and mind.
           </p>
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 lg:px-16 py-16">
-        <p className="text-muted-foreground text-sm font-sans leading-relaxed mb-12 max-w-3xl">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-16 py-10 sm:py-16">
+        <p className="text-muted-foreground text-sm font-sans leading-relaxed mb-8 sm:mb-12 max-w-3xl">
           Welcome to Sang-Druk Tibetan Herbal Clinic — Indore's first specialized Sowa Rigpa (Tibetan Medicine) clinic. We provide personalized diagnosis through traditional pulse reading and urine analysis, followed by treatment using authentic Tibetan herbal formulations.
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((s, i) => (
             <div key={i} className="bg-section-bg rounded-lg p-6 hover:shadow-md transition-shadow">
               <s.icon className="w-8 h-8 text-spa-green mb-4" />

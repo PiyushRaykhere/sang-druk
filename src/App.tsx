@@ -10,6 +10,12 @@ import ServicesTreatments from "./pages/ServicesTreatments.tsx";
 import ProductDetail from "./pages/ProductDetail.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
+import WhoWeAre from "./pages/WhoWeAre.tsx";
+import WhyChooseUs from "./pages/WhyChooseUs.tsx";
+import HistoryTibetanMedicine from "./pages/HistoryTibetanMedicine.tsx";
+import DevelopmentInExile from "./pages/DevelopmentInExile.tsx";
+import FourTantras from "./pages/FourTantras.tsx";
+import MedicineBuddha from "./pages/MedicineBuddha.tsx";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +32,12 @@ const App = () => (
           <Route path="/tibetan-medicine" element={<TibetanMedicine />} />
           <Route path="/services-treatments" element={<ServicesTreatments />} />
           <Route path="/products/:slug" element={<ProductDetail />} />
+          <Route path="/about/who-we-are" element={<WhoWeAre />} />
+          <Route path="/about/why-choose-us" element={<WhyChooseUs />} />
+          <Route path="/about/history-tibetan-medicine" element={<HistoryTibetanMedicine />} />
+          <Route path="/about/development-in-exile" element={<DevelopmentInExile />} />
+          <Route path="/about/four-tantras" element={<FourTantras />} />
+          <Route path="/about/medicine-buddha" element={<MedicineBuddha />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
