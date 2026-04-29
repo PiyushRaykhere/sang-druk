@@ -21,7 +21,7 @@ const ServicesTreatments = () => {
     <div className="min-h-screen">
       <div className="bg-spa-green">
         <Navbar />
-        <div className="pt-28 pb-16 px-6 lg:px-16 max-w-7xl mx-auto">
+        <div className="pt-52 pb-16 px-6 lg:px-16 max-w-7xl mx-auto">
           <Link to="/" className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground text-sm font-sans mb-6 transition-colors">
             <ArrowLeft className="w-4 h-4" /> Back to Home
           </Link>

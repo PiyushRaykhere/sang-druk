@@ -222,7 +222,7 @@ const Navbar = () => {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 inline-flex items-center bg-spa-green-deep text-spa-gold font-bold text-sm px-6 py-2.5 rounded-full hover:bg-spa-green hover:shadow-gold transition-all"
+            className="shrink-0 inline-flex bg-spa-green-deep text-spa-gold font-bold text-sm px-6 mr-36 py-2.5 rounded-full hover:bg-spa-green hover:shadow-gold transition-all"
           >
             Book Now
           </a>
