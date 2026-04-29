@@ -60,16 +60,16 @@ const Navbar = () => {
       {/* Top bar — hides on scroll */}
       <div
         className={`bg-spa-green-deep overflow-hidden transition-all duration-500 ${
-          scrolled ? "max-h-0 opacity-0" : "max-h-56 opacity-100"
+          scrolled ? "max-h-0 opacity-0" : "max-h-44 opacity-100"
         }`}
       >
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-10 flex items-center justify-between">
           {/* Left — Logo */}
-          <Link to="/" className="shrink-0" onClick={() => setMobileOpen(false)} aria-label="Sang-Druk Home">
+          <Link to="/" className="shrink-0 py-2" onClick={() => setMobileOpen(false)} aria-label="Sang-Druk Home">
             <img
               src={logo}
               alt="Sang-Druk Logo"
-              className="w-16 h-20 sm:w-20 sm:h-24 lg:w-28 lg:h-28"
+              className="w-14 h-14 sm:w-18 sm:h-18 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain drop-shadow-xl"
             />
           </Link>
 
@@ -96,11 +96,11 @@ const Navbar = () => {
 
           {/* Right — Buddha image + Mobile toggle */}
           <div className="flex items-center gap-2 shrink-0">
-            <div className="hidden lg:flex items-center justify-center">
+            <div className="flex items-center justify-center py-2">
               <img
                 src={buddha}
                 alt="Medicine Buddha"
-                className="w-20 h-24 lg:w-24 lg:h-28 object-contain drop-shadow-lg"
+                className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 object-contain drop-shadow-xl"
               />
             </div>
             {/* Mobile toggle */}
