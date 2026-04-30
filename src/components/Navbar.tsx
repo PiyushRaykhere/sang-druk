@@ -49,7 +49,7 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    const onScroll = () => setScrolled(window.scrollY > 100);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -59,11 +59,10 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 right-0 z-50 shadow-elegant">
       {/* Top bar — hides on scroll */}
       <div
-        className={`bg-spa-green-deep overflow-hidden transition-all duration-500 ${
-          scrolled ? "max-h-0 opacity-0" : "max-h-44 opacity-100"
-        }`}
+        className={`bg-spa-green-deep overflow-hidden transition-all duration-500 ${scrolled ? "max-h-0 opacity-0" : "max-h-44 opacity-100"
+          }`}
       >
-        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-10 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-32 flex items-center justify-between">
           {/* Left — Logo */}
           <Link to="/" className="shrink-0 py-2" onClick={() => setMobileOpen(false)} aria-label="Sang-Druk Home">
             <img
@@ -117,7 +116,7 @@ const Navbar = () => {
 
       {/* Bottom bar — sticky gold menu */}
       <nav className="hidden lg:block h-[47px] bg-spa-gold">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8 xl:px-16 flex items-center gap-1">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 xl:px-56 flex items-center gap-1">
           {/* Centered links */}
           <div className="flex-1 flex items-center justify-center gap-1">
             <Link
@@ -127,33 +126,32 @@ const Navbar = () => {
               Home
             </Link>
             <div
-  ref={aboutRef}
-  className="relative"
-  onMouseEnter={() => setAboutOpen(true)}
-  onMouseLeave={() => setAboutOpen(false)}
->
-  <button className="flex items-center gap-1 px-5 py-3.5 text-spa-green-deep font-bold text-sm tracking-wider uppercase font-sans hover:bg-spa-green-deep hover:text-spa-gold transition-colors">
-    About Us
-    <ChevronDown className={`w-3.5 h-3.5 transition-transform ${aboutOpen ? "rotate-180" : ""}`} />
-  </button>
+              ref={aboutRef}
+              className="relative"
+              onMouseEnter={() => setAboutOpen(true)}
+              onMouseLeave={() => setAboutOpen(false)}
+            >
+              <button className="flex items-center gap-1 px-5 py-3.5 text-spa-green-deep font-bold text-sm tracking-wider uppercase font-sans hover:bg-spa-green-deep hover:text-spa-gold transition-colors">
+                About Us
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${aboutOpen ? "rotate-180" : ""}`} />
+              </button>
 
-  {/* Dropdown */}
-  <div
-    className={`absolute top-full left-0 bg-background rounded-b-xl shadow-elegant border border-border py-2 min-w-[240px] z-50 transition-all duration-300 ${
-      aboutOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"
-    }`}
-  >
-    {aboutItems.map((item) => (
-      <Link
-        key={item.name}
-        to={item.href}
-        className="block px-4 py-2.5 text-sm text-foreground hover:bg-spa-gold/15 hover:text-spa-green-deep transition-colors font-sans font-semibold"
-      >
-        {item.name}
-      </Link>
-    ))}
-  </div>
-</div>
+              {/* Dropdown */}
+              <div
+                className={`absolute top-full left-0 bg-background rounded-b-xl shadow-elegant border border-border py-2 min-w-[240px] z-50 transition-all duration-300 ${aboutOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"
+                  }`}
+              >
+                {aboutItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="block px-4 py-2.5 text-sm text-foreground hover:bg-spa-gold/15 hover:text-spa-green-deep transition-colors font-sans font-semibold"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
 
             <div ref={productsRef} className="relative">
               <button
@@ -209,12 +207,12 @@ const Navbar = () => {
               )}
             </div>
 
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="px-5 py-3.5 text-spa-green-deep font-bold text-sm tracking-wider uppercase font-sans hover:bg-spa-green-deep hover:text-spa-gold transition-colors"
             >
               Contact
-            </a>
+            </Link>
           </div>
 
           {/* Right — Book Now */}
@@ -222,7 +220,7 @@ const Navbar = () => {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 inline-flex bg-spa-green-deep text-spa-gold font-bold text-sm px-6 mr-36 py-2.5 rounded-full hover:bg-spa-green hover:shadow-gold transition-all"
+            className="shrink-0 inline-flex bg-spa-green-deep text-spa-gold font-bold text-sm px-10 py-2.5 rounded-full hover:bg-spa-green hover:shadow-gold transition-all"
           >
             Book Now
           </a>
@@ -278,13 +276,13 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="text-primary-foreground text-base font-bold font-sans py-3 border-b border-primary-foreground/10 min-h-[44px] flex items-center"
             onClick={() => setMobileOpen(false)}
           >
             Contact
-          </a>
+          </Link>
           <a
             href={WHATSAPP_URL}
             target="_blank"

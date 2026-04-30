@@ -16,6 +16,7 @@ import HistoryTibetanMedicine from "./pages/HistoryTibetanMedicine.tsx";
 import DevelopmentInExile from "./pages/DevelopmentInExile.tsx";
 import FourTantras from "./pages/FourTantras.tsx";
 import MedicineBuddha from "./pages/MedicineBuddha.tsx";
+import Contact from "./pages/Contact.tsx";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/about/development-in-exile" element={<DevelopmentInExile />} />
           <Route path="/about/four-tantras" element={<FourTantras />} />
           <Route path="/about/medicine-buddha" element={<MedicineBuddha />} />
+          <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
